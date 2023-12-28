@@ -1,8 +1,8 @@
 import './App.css'
-import Navbar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar'
 
 export default function App() {
   return (
-    <div><Navbar/></div>
+    <div><NavBar/></div>
   )
 }
