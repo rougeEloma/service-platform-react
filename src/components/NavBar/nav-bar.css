@@ -7,6 +7,10 @@
     text-align: center;
 }
 
+.active {
+    display: none;
+}
+
 .container {
     width: 80%;
     display: flex;
