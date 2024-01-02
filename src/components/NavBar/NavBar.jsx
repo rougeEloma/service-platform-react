@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./nav-bar.css";
 import { MainButton } from "../button/Buttons";
 
 const NavBar = () => {
 
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
+
+    const isActive = () => {
+        window,scrollY > 0 ? setActive(false) : setActive(true);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', isActive);
+        return () => {
+            window.removeEventListener('scroll', isActive);
+        }
+    },[])
+
+    const currentUser = {
+        id: 1,
+        username: "John Doe",
+        isSeller: true
+    }
 
     return (
         <nav className="nav-bar">
@@ -20,7 +37,13 @@ const NavBar = () => {
                     <span>Explorer</span>
                     <span>à propos</span>
                     <span>Nos prestataires</span>
-                    <MainButton textValue="Rejoins-nous!"/>
+                    {!currentUser && <MainButton textValue="Rejoins-nous!"/>}
+                    {currentUser && (
+                        <div className="user">
+                            <img src="" alt="" />
+                            <span>{currentUser?.username}</span>
+                        </div>
+                    )}
                 </div>
             </div>
                 {/* <hr /> */}
