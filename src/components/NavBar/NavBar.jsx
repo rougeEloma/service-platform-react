@@ -5,6 +5,7 @@ import { MainButton } from "../button/Buttons";
 const NavBar = () => {
 
     const [active, setActive] = useState(false)
+    const [open, setOpen] = useState(false)
 
     const isActive = () => {
         window,scrollY > 0 ? setActive(false) : setActive(true);
@@ -39,12 +40,24 @@ const NavBar = () => {
                     <span>Nos prestataires</span>
                     {!currentUser && <MainButton textValue="Rejoins-nous!"/>}
                     {currentUser && (
-                        <div className="user">
-                            <img src="" alt="" />
+                        <div className="user" onClick={() => setOpen(!open)}>
+                            <img src="../../assets/AE_logo.png" alt="" />
                             <span>{currentUser?.username}</span>
+                            {open && <div className="options">
+                                {
+                                currentUser?.isSeller && (
+                                    <>
+                                        <span>Services</span>
+                                        <span>Ajouter service</span>
+                                    </>
+                                )}
+                                <span>Achats</span>
+                                <span>Messages</span>
+                                <span>Se déconnecter</span>   
+                            </div>}
                         </div>
                     )}
-                </div>
+                </div> 
             </div>
                 {/* <hr /> */}
                 <div className={active ? "menu active" : "menu"}>

@@ -17,7 +17,7 @@
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     padding: 10px 0px;
@@ -28,6 +28,16 @@
     font-weight: bold;
 }
 
+.links {
+    display: flex;
+    align-items: center;
+}
+
+
+.links span {
+    margin-right: 20px;
+}
+
 .menu {
     padding: 10px;
     background-color: var(--primary-color);
@@ -35,7 +45,39 @@
     border-top: solid 1px var(--white-color);
     width: 99%;
 }
-
-span {
+.menu span {
     margin-right: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer;
+}
+img {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+}
+.options {
+    position: absolute;
+    top: 30px;
+    background-color: var(--white-color);
+    border: 2px solid var(--links-color);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--links-color);
+}
+.options span {
+    margin-right: 0;
+    padding: 3px 7px;
+    cursor: pointer;
+}
+.options span:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
