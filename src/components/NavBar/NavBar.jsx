@@ -4,7 +4,7 @@ import { MainButton } from "../button/Buttons";
 
 const NavBar = () => {
 
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(true)
     const [open, setOpen] = useState(false)
 
     const isActive = () => {
