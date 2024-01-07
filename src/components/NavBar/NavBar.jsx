@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./nav-bar.css";
 import { MainButton } from "../button/Buttons";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
     const [active, setActive] = useState(true)
     const [open, setOpen] = useState(false)
+
+    
 
     const isActive = () => {
         window,scrollY > 0 ? setActive(false) : setActive(true);
@@ -28,12 +31,12 @@ const NavBar = () => {
         <nav className="nav-bar">
             <div className="container">
                 <div className="logo">
-                    {/* <Link to="/"> */}
-                        <span className="text">LBN</span>
-                    {/* </Link> */}
+                    <Link to="/">
+                        <span className="text-links">LBN</span>
+                    </Link>
                     {/* <span className="dot">.</span> */}
                 </div>
-                <div className="links">
+                <div className="main-menu-links">
                     <span>business</span>
                     <span>Explorer</span>
                     <span>à propos</span>
@@ -47,20 +50,20 @@ const NavBar = () => {
                                 {
                                 currentUser?.isSeller && (
                                     <>
-                                        <span>Services</span>
-                                        <span>Ajouter service</span>
+                                        <Link to="/mes-services"><span>Mes services</span></Link>
+                                        <Link to="/ajouter-service"><span>Ajouter service</span></Link>
                                     </>
                                 )}
-                                <span>Achats</span>
-                                <span>Messages</span>
-                                <span>Se déconnecter</span>   
+                                <Link to="/mes-achats"><span>Mes achats</span></Link>
+                                <Link to="/messages"><span>Messages</span></Link>
+                                <Link to="/"><span>Se déconnecter</span></Link>
                             </div>}
                         </div>
                     )}
                 </div> 
             </div>
                 {/* <hr /> */}
-                <div className={active ? "menu active" : "menu"}>
+                <div className={active ? "sub-menu active" : "sub-menu"}>
                     <span>Categorie 1</span>
                     <span>Categorie 2</span>
                     <span>Categorie 3</span>

@@ -2,6 +2,10 @@ import './App.css'
 import Home from './pages/home/Home';
 import NavBar from './components/NavBar/NavBar'
 import Footer from './components/Footer/Footer';
+import Messages from './pages/messages/Messages';
+import MyServices from "./pages/myServices/MyServices";
+import MyOrders from "./pages/orders/MyOrders";
+import AddService from "./pages/add/AddService"
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 export default function App() {
@@ -24,6 +28,22 @@ export default function App() {
         {
           path:"/",
           element:<Home/>
+        },
+        {
+          path:"/mes-services",
+          element:<MyServices/>
+        },
+        {
+          path:"/ajouter-service",
+          element:<AddService/>
+        },
+        {
+          path:"/mes-achats",
+          element:<MyOrders/>
+        },
+        {
+          path:"/messages",
+          element:<Messages/>
         }
       ]
     },

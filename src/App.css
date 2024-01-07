@@ -2,6 +2,10 @@ body {
   margin: 0 auto;
 }
 
+*{
+  text-decoration: none;
+}
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   
@@ -19,6 +23,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
   
+/* BUTTONS */ 
+
 .main-button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -40,3 +46,4 @@ button:hover {
     outline: 4px auto -webkit-focus-ring-color;
   }
   
+/* LINKS */
