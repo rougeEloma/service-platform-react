@@ -35,6 +35,11 @@
 .main-menu {
     display: flex;
     align-items: center;
+    gap: 15px;
+    transition: 0.5s;
+}
+.main-menu span:hover {
+    cursor: pointer;
 }
 
 
