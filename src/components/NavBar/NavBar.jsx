@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./nav-bar.css";
 import { MainButton } from "../button/Buttons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
 
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
     const [open, setOpen] = useState(false)
 
-    
+    const {pathname} = useLocation();
 
     const isActive = () => {
         window,scrollY > 0 ? setActive(false) : setActive(true);
@@ -36,7 +36,7 @@ const NavBar = () => {
                     </Link>
                     {/* <span className="dot">.</span> */}
                 </div>
-                <div className="main-menu-links">
+                <div className="main-menu">
                     <span>business</span>
                     <span>Explorer</span>
                     <span>à propos</span>
@@ -63,7 +63,7 @@ const NavBar = () => {
                 </div> 
             </div>
                 {/* <hr /> */}
-                <div className={active ? "sub-menu active" : "sub-menu"}>
+                <div className={(active || pathname =="/") ? "sub-menu active" : "sub-menu"}>
                     <span>Categorie 1</span>
                     <span>Categorie 2</span>
                     <span>Categorie 3</span>
