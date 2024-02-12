@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./nav-bar.css";
 import { MainButton } from "../button/Buttons";
 import { Link, useLocation } from "react-router-dom";
+import userPfp from "../../assets/react.svg"
 
 const NavBar = () => {
 
@@ -11,7 +12,7 @@ const NavBar = () => {
     const {pathname} = useLocation();
 
     const isActive = () => {
-        window,scrollY > 0 ? setActive(false) : setActive(true);
+        window,scrollY > 0 ? setActive(true) : setActive(false);
     }
 
     useEffect(() => {
@@ -44,7 +45,7 @@ const NavBar = () => {
                     {!currentUser && <MainButton textValue="Rejoins-nous!"/>}
                     {currentUser && (
                         <div className="user" onClick={() => setOpen(!open)}>
-                            <img src="../../assets/AE_logo.png" alt="" />
+                            <img src={userPfp} alt="user profile picture" />
                             <span>{currentUser?.username}</span>
                             {open && <div className="options">
                                 {
