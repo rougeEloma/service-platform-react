@@ -12,11 +12,38 @@
     align-items: center;
 }
 
+/* left featured section _____________________ */
 .left {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    width: 80%;
+}
+.search-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.search-input img {
+    width: 17px;
+    height: 17px;
+    margin: 5px;
+}
+.search-input input {
+    border: none;
+    outline: none;
+    width: 540px;
+}
+
+/* right featured section _____________________ */
 .right {
 
 }

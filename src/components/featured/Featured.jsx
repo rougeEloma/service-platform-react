@@ -11,7 +11,10 @@ const Featured = () => {
                     <div className="searchbar">
                         <div className="search-input">
                             <img src={searchIcon} alt="" />
-                            <input type="text" placeholder="Quel service recherchez-vous ?" />
+                            <input type="text" 
+                            placeholder="Quel service recherchez-vous ?" 
+                            maxLength={70}
+                            minLength={1}/>
                         </div>
                         <button><img src={searchIcon} alt="" /></button>
                     </div>
