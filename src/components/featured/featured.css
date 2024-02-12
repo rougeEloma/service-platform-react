@@ -1,0 +1,27 @@
+.featured {
+    height: 530px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.right {
+
+}
+.right img {
+    width: 400px;
+    height: 600px;
+    background-size: cover;
+}

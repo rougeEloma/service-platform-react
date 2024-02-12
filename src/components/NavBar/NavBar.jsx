@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./nav-bar.css";
 import { MainButton } from "../button/Buttons";
 import { Link, useLocation } from "react-router-dom";
-import userPfp from "../../assets/react.svg"
+import userPfp from "../../../public/img/react.svg"
 
 const NavBar = () => {
 
