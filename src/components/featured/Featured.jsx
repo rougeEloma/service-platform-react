@@ -16,7 +16,7 @@ const Featured = () => {
                             maxLength={70}
                             minLength={1}/>
                         </div>
-                        <button><img src={searchIcon} alt="" /></button>
+                        <button>rechercher</button>
                     </div>
                     <div className="populaire">
                         <span>Populaire : </span>
