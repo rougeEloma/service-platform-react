@@ -1,0 +1,17 @@
+.trusted-by {
+    background-color: #fff0f0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30;
+}
+.trust-text {
+    color: #616161;
+    font-weight: 500;
+}
+
+.sponsors {
+    color: #909090;
+    margin: 0px 10px;
+}
