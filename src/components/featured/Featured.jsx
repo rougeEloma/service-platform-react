@@ -7,7 +7,7 @@ const Featured = () => {
         <div className="featured">
             <div className="container">
                 <div className="left">
-                    <h1>Trouver les bons services freelances, immédiatement!</h1>
+                    <h1>Trouver les bons services <i>freelances</i>, immédiatement!</h1>
                     <div className="searchbar">
                         <div className="search-input">
                             <img src={searchIcon} alt="" />
@@ -18,7 +18,7 @@ const Featured = () => {
                         </div>
                         <button>rechercher</button>
                     </div>
-                    <div className="populaire">
+                    <div className="populares">
                         <span>Populaire : </span>
                         <button>Jardinier</button>
                         <button>Peintre</button>
