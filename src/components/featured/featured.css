@@ -1,5 +1,5 @@
 .featured {
-    height: 530px;
+    height: 300px;
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
@@ -71,8 +71,8 @@ i {
 .right {
     height: 100%;
 }
-.right img {
+/* .right img {
     width: 400px;
     height: 600px;
     background-size: cover;
-}
+} */
