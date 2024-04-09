@@ -1,8 +1,10 @@
 import "./catCard.css"
 
-const CatCard = () => {
+const CatCard = ({item}) => {
   return (
-    <div>CatCard</div>
+    <div className="cat-card">
+        <div className="container"></div>
+    </div>
   )
 }
 
