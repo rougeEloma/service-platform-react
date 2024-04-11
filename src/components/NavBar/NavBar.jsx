@@ -38,9 +38,9 @@ const NavBar = () => {
               {/* <span className="dot">.</span> */}
             </div>
             <div className="links">
-              <span>Fiverr Business</span>
-              <span>Explore</span>
-              <span>English</span>
+              <span>Votre Business</span>
+              <span>Explorer</span>
+              <span>Langues</span>
               {!currentUser?.isSeller && <span>Devient Prestataire</span>}
               {currentUser ? (
                 <div className="user" onClick={() => setOpen(!open)}>
