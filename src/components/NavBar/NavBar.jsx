@@ -94,7 +94,10 @@ const NavBar = () => {
                   Garage
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Commission
+                  Immobilier
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Cuisine
                 </Link>
                 <Link className="link menuLink" to="/">
                   Musique & Audio
