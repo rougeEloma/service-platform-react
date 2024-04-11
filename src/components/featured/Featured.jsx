@@ -16,25 +16,26 @@ function Featured() {
       <div className="container">
         <div className="left">
           <h1>
-            Find the perfect <span>freelance</span> services for your business
+          Trouvez les services <span>indépendants</span> parfaits pour vous
           </h1>
           <div className="search">
             <div className="searchInput">
               <img src={searchPng} alt="" />
               <input
                 type="text"
-                placeholder='Try "building mobil app"'
+                placeholder='Essayez "jardinier"    '
+                maxlength="20"
                 onChange={(e) => setInput(e.target.value)}
               />
             </div>
-            <button>Search</button>
+            <button>Rechercher</button>
           </div>
           <div className="popular">
-            <span>Popular:</span>
-            <button>Web Design</button>
-            <button>WordPress</button>
-            <button>Logo Design</button>
-            <button>AI Services</button>
+            <span>Populaire:</span>
+            <button>Ménage</button>
+            <button>Commission</button>
+            <button>Photograpie</button>
+            <button>Informatique</button>
           </div>
         </div>
         <div className="right">
