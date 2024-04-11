@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./nav-bar.css";
+import "./NavBar.scss";
 import { MainButton } from "../button/Buttons";
 import { Link, useLocation } from "react-router-dom";
 import userPfp from "../../../public/img/react.svg"
@@ -29,48 +29,91 @@ const NavBar = () => {
     }
 
     return (
-        <nav className="nav-bar">
-            <div className="container">
-                <div className="logo">
-                    <Link to="/">
-                        <span className="text-links">LBN</span>
-                    </Link>
-                    {/* <span className="dot">.</span> */}
-                </div>
-                <div className="main-menu">
-                    <span>business</span>
-                    <span>Explorer</span>
-                    <span>à propos</span>
-                    <span>Nos prestataires</span>
-                    {!currentUser && <MainButton textValue="Rejoins-nous!"/>}
-                    {currentUser && (
-                        <div className="user" onClick={() => setOpen(!open)}>
-                            <img src={userPfp} alt="user profile picture" />
-                            <span>{currentUser?.username}</span>
-                            {open && <div className="options">
-                                {
-                                currentUser?.isSeller && (
-                                    <>
-                                        <Link to="/mes-services"><span>Mes services</span></Link>
-                                        <Link to="/ajouter-service"><span>Ajouter service</span></Link>
-                                    </>
-                                )}
-                                <Link to="/mes-achats"><span>Mes achats</span></Link>
-                                <Link to="/messages"><span>Messages</span></Link>
-                                <Link to="/"><span>Se déconnecter</span></Link>
-                            </div>}
-                        </div>
-                    )}
-                </div> 
+        <div className={active || pathname !== "/" ? "nav-bar active" : "nav-bar"}>
+          <div className="container">
+            <div className="logo">
+              <Link className="link" to="/">
+                <span className="text">LBN</span>
+              </Link>
+              {/* <span className="dot">.</span> */}
             </div>
-                {/* <hr /> */}
-                <div className={(active || pathname =="/") ? "sub-menu active" : "sub-menu"}>
-                    <span>Categorie 1</span>
-                    <span>Categorie 2</span>
-                    <span>Categorie 3</span>
+            <div className="links">
+              <span>Fiverr Business</span>
+              <span>Explore</span>
+              <span>English</span>
+              {!currentUser?.isSeller && <span>Devient Prestataire</span>}
+              {currentUser ? (
+                <div className="user" onClick={() => setOpen(!open)}>
+                  <img src={userPfp} alt="" />
+                  <span>{currentUser?.username}</span>
+                  {open && (
+                    <div className="options">
+                      {currentUser.isSeller && (
+                        <>
+                          <Link className="link" to="/mygigs">
+                            Gigs
+                          </Link>
+                          <Link className="link" to="/add">
+                            Add New Gig
+                          </Link>
+                        </>
+                      )}
+                      <Link className="link" to="/orders">
+                        Orders
+                      </Link>
+                      <Link className="link" to="/messages">
+                        Messages
+                      </Link>
+                      <Link className="link" to="/">
+                        Logout
+                      </Link>
+                    </div>
+                  )}
                 </div>
-        </nav>
-    )
+              ) : (
+                <>
+                  <Link to="/login" className="link">Sign in</Link>
+                  <Link className="link" to="/register">
+                    <button>Join</button>
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+          {(active || pathname !== "/") && (
+            <>
+              <hr />
+              <div className="menu">
+                <Link className="link menuLink" to="/">
+                  Graphics & Design
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Video & Animation
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Writing & Translation
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Digital Marketing
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Music & Audio
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Programming & Tech
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Business
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Lifestyle
+                </Link>
+              </div>
+              <hr />
+            </>
+          )}
+        </div>
+      );
 }
 
 export default NavBar;

@@ -1,37 +1,48 @@
-import "./featured.css"
-import searchIcon from "../../../public/img/Search.svg"
-import bigImage from "../../../public/img/bigimage.png"
+import React, { useState } from "react";
+import "./Featured.scss";
+import { useNavigate } from "react-router-dom";
+import searchPng from "../../../public/img/Search.svg"
 
-const Featured = () => {
-    return (
-        <div className="featured">
-            <div className="container">
-                <div className="left">
-                    <h1>Trouver les bons services <i>freelances</i>, immédiatement!</h1>
-                    <div className="searchbar">
-                        <div className="search-input">
-                            <img src={searchIcon} alt="" />
-                            <input type="text" 
-                            placeholder="Quel service recherchez-vous ?" 
-                            maxLength={70}
-                            minLength={1}/>
-                        </div>
-                        <button>rechercher</button>
-                    </div>
-                    <div className="populares">
-                        <span>Populaire : </span>
-                        <button>Jardinier</button>
-                        <button>Peintre</button>
-                        <button>Designer</button>
-                        <button>Garagiste</button>
-                    </div>
-                </div>
-                <div className="right">
-                    {/* <img src={bigImage} alt="" /> */}
-                </div>
+function Featured() {
+  const [input, setInput] = useState("");
+  // const navigate = useNavigate();
+
+  // const handleSubmit = () => {
+  //   navigate(`/gigs?search=${input}`);
+  // };
+
+  return (
+    <div className="featured">
+      <div className="container">
+        <div className="left">
+          <h1>
+            Find the perfect <span>freelance</span> services for your business
+          </h1>
+          <div className="search">
+            <div className="searchInput">
+              <img src={searchPng} alt="" />
+              <input
+                type="text"
+                placeholder='Try "building mobil app"'
+                onChange={(e) => setInput(e.target.value)}
+              />
             </div>
+            <button>Search</button>
+          </div>
+          <div className="popular">
+            <span>Popular:</span>
+            <button>Web Design</button>
+            <button>WordPress</button>
+            <button>Logo Design</button>
+            <button>AI Services</button>
+          </div>
         </div>
-    )
+        <div className="right">
+          <img src="./img/man.png" alt="" />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Featured;
