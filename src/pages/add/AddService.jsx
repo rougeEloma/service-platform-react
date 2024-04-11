@@ -3,6 +3,8 @@ const AddService = () => {
         <div>
             <br/><br/><br/>
             <section>formulaire d'ajout de service</section>
+            <section>formulaire d'ajout de service</section>
+            <section>formulaire d'ajout de service</section>
         </div>
     )
 }

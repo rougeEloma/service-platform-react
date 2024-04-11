@@ -38,7 +38,7 @@ const NavBar = () => {
               {/* <span className="dot">.</span> */}
             </div>
             <div className="links">
-              <span>Votre Business</span>
+              <span>NBN</span> {/* l'apropos  */}
               <span>Explorer</span>
               <span>Langues</span>
               {!currentUser?.isSeller && <span>Devient Prestataire</span>}
@@ -50,31 +50,31 @@ const NavBar = () => {
                     <div className="options">
                       {currentUser.isSeller && (
                         <>
-                          <Link className="link" to="/mygigs">
-                            Gigs
+                          <Link className="link" to="/ajouter-service">
+                            Nouveau
                           </Link>
-                          <Link className="link" to="/add">
-                            Add New Gig
+                          <Link className="link" to="/mes-services">
+                            Services
                           </Link>
                         </>
                       )}
-                      <Link className="link" to="/orders">
-                        Orders
+                      <Link className="link" to="/mes-commandes">
+                        Commandes
                       </Link>
                       <Link className="link" to="/messages">
                         Messages
                       </Link>
                       <Link className="link" to="/">
-                        Logout
+                        Se Déconnecter
                       </Link>
                     </div>
                   )}
                 </div>
               ) : (
                 <>
-                  <Link to="/login" className="link">Sign in</Link>
+                  <Link to="/login" className="link">Se connecter</Link>
                   <Link className="link" to="/register">
-                    <button>Join</button>
+                    <button>Joindre</button>
                   </Link>
                 </>
               )}
@@ -85,28 +85,31 @@ const NavBar = () => {
               <hr />
               <div className="menu">
                 <Link className="link menuLink" to="/">
-                  Graphics & Design
+                  Ménage
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Video & Animation
+                  Jardin
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Writing & Translation
+                  Garage
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Digital Marketing
+                  Commission
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Music & Audio
+                  Musique & Audio
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Programming & Tech
+                  Photograpie
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Business
+                  Littérature
                 </Link>
                 <Link className="link menuLink" to="/">
-                  Lifestyle
+                  Informatique
+                </Link>
+                <Link className="link menuLink" to="/">
+                  Electronique
                 </Link>
               </div>
               <hr />

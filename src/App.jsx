@@ -38,7 +38,7 @@ export default function App() {
           element:<AddService/>
         },
         {
-          path:"/mes-achats",
+          path:"/mes-commandes",
           element:<MyOrders/>
         },
         {
