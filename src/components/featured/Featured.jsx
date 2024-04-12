@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Featured.scss";
 import { useNavigate } from "react-router-dom";
 import searchPng from "../../../public/img/Search.svg"

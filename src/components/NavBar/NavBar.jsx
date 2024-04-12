@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./NavBar.scss";
 import { MainButton } from "../button/Buttons";
 import { Link, useLocation } from "react-router-dom";
@@ -39,7 +39,9 @@ const NavBar = () => {
             </div>
             <div className="links">
               <span>NBN</span> {/* l'apropos  */}
+              <Link to="/explorer">
               <span>Explorer</span>
+              </Link>
               <span>Langues</span>
               {!currentUser?.isSeller && <span>Devient Prestataire</span>}
               {currentUser ? (

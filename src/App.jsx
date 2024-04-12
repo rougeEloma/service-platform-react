@@ -7,6 +7,7 @@ import MyServices from "./pages/myServices/MyServices";
 import MyOrders from "./pages/orders/MyOrders";
 import AddService from "./pages/add/AddService"
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import Services from './pages/services/Services';
 
 export default function App() {
 
@@ -28,6 +29,10 @@ export default function App() {
         {
           path:"/",
           element:<Home/>
+        },
+        {
+          path:"/explorer",
+          element:<Services/>
         },
         {
           path:"/mes-services",

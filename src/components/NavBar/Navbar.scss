@@ -10,9 +10,18 @@
   transition: 0.5s all ease;
   margin-bottom: 7px;
 
+  .links span{
+    color: white;
+  }
+  
+
   &.active {
     background-color: white;
-    color: black;
+    color: black !important;
+
+    .links span{
+      color: var(--secondary-color);
+    }
 
     button {
       background-color: white !important;

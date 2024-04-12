@@ -24,5 +24,15 @@ body {
   
 /* BUTTONS */ 
 
+button{
+  background-color: var(--button-color);
+}
 
 /* LINKS */
+
+.redLinks{
+  color: var(--links-color);
+}
+.blueLinks{
+  color: var(--secondary-color);
+}
