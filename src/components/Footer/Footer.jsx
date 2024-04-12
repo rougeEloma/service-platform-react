@@ -8,50 +8,49 @@ function Footer() {
         <div className="top">
           <div className="item">
             <h2>Categories</h2>
-            <span>Graphics & Design</span>
-            <span>Digital Marketing</span>
-            <span>Writing & Translation</span>
-            <span>Video & Animation</span>
-            <span>Music & Audio</span>
-            <span>Programming & Tech</span>
-            <span>Data</span>
-            <span>Business</span>
-            <span>Lifestyle</span>
-            <span>Photography</span>
-            <span>Sitemap</span>
+            <span>Ménage</span>
+            <span>Jardin</span>
+            <span>Jardin</span>
+            <span>Immobilier</span>
+            <span>Cuisine</span>
+            <span>Musique & Audio</span>
+            <span>Photograpie</span>
+            <span>Littérature</span>
+            <span>Informatique</span>
+            <span>Electronique</span>
           </div>
           <div className="item">
-            <h2>About</h2>
-            <span>Press & News</span>
-            <span>Partnerships</span>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Intellectual Property Claims</span>
-            <span>Investor Relations</span>
-            <span>Contact Sales</span>
+            <h2>A propos</h2>
+            <span>Presse et Actualités</span>
+            <span>partenariats</span>
+            <span>politique de confidentialité</span>
+            <span>Conditions d'utilisation</span>
+            <span>propriété intellectuelle</span>
+            <span>investisseurs</span>
+            <span>service commercial</span>
           </div>
           <div className="item">
             <h2>Support</h2>
-            <span>Help & Support</span>
-            <span>Trust & Safety</span>
-            <span>Selling on Fiverr</span>
-            <span>Buying on Fiverr</span>
+            <span>Support d'aide</span>
+            <span>Confiance et sécurité</span>
+            <span>Vendre sur LBN</span>
+            <span>Commander sur LBN </span>
           </div>
           <div className="item">
-            <h2>Community</h2>
-            <span>Customer Success Stories</span>
-            <span>Community hub</span>
+            <h2>Communauté</h2>
+            <span>Témoignages de réussite</span>
+            <span>Centre communautaire</span>
             <span>Forum</span>
-            <span>Events</span>
+            <span>Événements</span>
             <span>Blog</span>
             <span>Influencers</span>
-            <span>Affiliates</span>
+            <span>Affiliés</span>
             <span>Podcast</span>
-            <span>Invite a Friend</span>
-            <span>Become a Seller</span>
+            <span>Invite un ami</span>
+            <span>Devenez prestataire</span>
             <span>Community Standards</span>
           </div>
-          <div className="item">
+          {/* <div className="item">
             <h2>More From Fiverr</h2>
             <span>Fiverr Business</span>
             <span>Fiverr Pro</span>
@@ -63,13 +62,13 @@ function Footer() {
             <span>Fiverr Workspace</span>
             <span>Learn</span>
             <span>Working Not Working</span>
-          </div>
+          </div> */}
         </div>
         <hr />
         <div className="bottom">
           <div className="left">
-            <h2>fiverr</h2>
-            <span>© Fiverr International Ltd. 2023</span>
+            <h2>LBN</h2>
+            <span>© LBN RDC Ltd. 2024</span>
           </div>
           <div className="right">
             <div className="social">
