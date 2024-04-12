@@ -71,7 +71,7 @@ function Footer() {
             <h2>fiverr</h2>
             <span>© Fiverr International Ltd. 2023</span>
           </div>
-          {/* <div className="right">
+          <div className="right">
             <div className="social">
               <img src="/img/twitter.png" alt="" />
               <img src="/img/facebook.png" alt="" />
@@ -81,14 +81,14 @@ function Footer() {
             </div>
             <div className="link">
               <img src="/img/language.png" alt="" />
-              <span>English</span>
+              <span>Français</span>
             </div>
             <div className="link">
               <img src="/img/coin.png" alt="" />
               <span>USD</span>
             </div>
             <img src="/img/accessibility.png" alt="" />
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
