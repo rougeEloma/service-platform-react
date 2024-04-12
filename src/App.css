@@ -10,11 +10,11 @@ body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   
     --primary-color: rgb(253, 120, 120);
-    --secondary-color: rgb(0, 23, 58);
-    --text-color: rgb(184, 34, 34);
+    --secondary-color: rgb(0, 27, 69);
+    --button-color: rgb(184, 34, 34);
     --links-color: rgb(184, 34, 34);
     --white-color: rgb(255 255 255);
-    --black-color: rgb(38 38 38);
+    --black-color: rgb(46, 46, 46);
   
     font-synthesis: none;
     text-rendering: optimizeLegibility;
