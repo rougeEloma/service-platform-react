@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./GigCard.scss";
+import "./ServiceCard.scss";
 
 const GigCard = ({ item }) => {
   // const { isLoading, error, data } = useQuery({
@@ -10,7 +10,7 @@ const GigCard = ({ item }) => {
   //     }),
   // });
   return (
-    <Link to="/gig/123">
+    <Link to="/gig/123" className="link">
       <div className="gigCard">
         <img src={item.img} alt="" />
         <div className="info">
@@ -29,7 +29,7 @@ const GigCard = ({ item }) => {
           <img src="./img/heart.png" alt="" />
           <div className="price">
             <span>À PARTIR DE</span>
-            <h2>${item.price}</h2>
+            <h2>$ {item.price}</h2>
           </div>
         </div>
       </div>

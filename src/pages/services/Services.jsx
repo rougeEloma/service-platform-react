@@ -1,8 +1,8 @@
 
 import { useState } from "react"
-import "./Services.scss"
+import "./Services.scss";
 import { services } from "../../datas/data"
-import GigCard from "../../components/gigCard/GigCard"
+import GigCard from "../../components/serviceCard/ServiceCard"
 
 const Services = () => {
     const [sort, setSort] = useState("sales")
@@ -33,7 +33,7 @@ const Services = () => {
                     <span className="sortType">
                     {sort === "sales" ? "populaire" : "récent"}
                     </span>
-                    <img src="./img/down.png" alt="" onClick={() => setOpen(!open)} />
+                    <img src="/img/down.png" alt="" onClick={() => setOpen(!open)} />
                     {open && (
                     <div className="rightMenu">
                         {sort === "sales" ? (
