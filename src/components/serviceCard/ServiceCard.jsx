@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./ServiceCard.scss";
 
-const GigCard = ({ item }) => {
+const ServiceCard = ({ item }) => {
   // const { isLoading, error, data } = useQuery({
   //   queryKey: [item.userId],
   //   queryFn: () =>
@@ -37,4 +37,4 @@ const GigCard = ({ item }) => {
   );
 };
 
-export default GigCard;
+export default ServiceCard;

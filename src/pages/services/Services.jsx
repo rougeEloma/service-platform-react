@@ -1,8 +1,9 @@
 
 import { useState } from "react"
-import "./Services.scss";
+import "./Services.scss"
+
 import { services } from "../../datas/data"
-import GigCard from "../../components/serviceCard/ServiceCard"
+import ServiceCard from "../../components/serviceCard/ServiceCard"
 
 const Services = () => {
     const [sort, setSort] = useState("sales")
@@ -48,7 +49,7 @@ const Services = () => {
             </div>
             <div className="cards">
                 {services.map(service => (
-                    <GigCard key={service.id} item={service} />
+                    <ServiceCard key={service.id} item={service} />
                 ))}
             </div>
         </div>
