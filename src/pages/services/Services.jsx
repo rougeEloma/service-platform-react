@@ -1,6 +1,6 @@
 
-import { useState } from "react";
-import "./Services.scss";
+import { useState } from "react"
+import "./Services.scss"
 
 import { services } from "../../datas/data"
 import ServiceCard from "../../components/serviceCard/ServiceCard"
