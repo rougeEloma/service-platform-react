@@ -15,10 +15,10 @@ const Services = () => {
     }
 
   return (
-    <div className="services">
+    <div className="Servicesjsx">
         <div className="container">
             <span className="breadcrumbs">LBN | categorie |</span>
-            <h1>Ménage</h1>
+            <h1>MÉNAGE</h1>
             <p>
                 Explorez les services de LBN
             </p>
