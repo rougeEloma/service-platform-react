@@ -1,6 +1,6 @@
 
-import { useState } from "react"
-import "./Services.scss"
+import { useState } from "react";
+import "./Services.scss";
 
 import { services } from "../../datas/data"
 import ServiceCard from "../../components/serviceCard/ServiceCard"
@@ -20,7 +20,7 @@ const Services = () => {
             <span className="breadcrumbs">LBN | categorie |</span>
             <h1>Ménage</h1>
             <p>
-                Explorez les limites de l'art et de la technologie avec les artistes IA de Liverr
+                Explorez les services de LBN
             </p>
             <div className="menu">
                 <div className="left">
