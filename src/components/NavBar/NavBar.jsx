@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./NavBar.scss";
 import { MainButton } from "../button/Buttons";
 import { Link, useLocation } from "react-router-dom";
-import userPfp from "../../../public/img/react.svg"
+import userPfp from "/img/user_profile_image.png"
 
 const NavBar = () => {
 
@@ -47,7 +47,7 @@ const NavBar = () => {
               {currentUser ? (
                 <div className="user" onClick={() => setOpen(!open)}>
                   <img src={userPfp} alt="" />
-                  <span>{currentUser?.username}</span>
+                  {/* <span>{currentUser?.username}</span> */}
                   {open && (
                     <div className="options">
                       {currentUser.isSeller && (
