@@ -2,20 +2,78 @@
 @tailwind components;
 @tailwind utilities; */
 
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+body {
+  margin: 0 auto;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+*{
+  text-decoration: none;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --primary-color: rgb(253, 185, 165);
+  --secondary-color: rgb(0, 27, 69);
+  --button-color: rgb(215, 46, 46);
+  --links-color: rgb(215, 46, 46);
+  --white-color: rgb(255 255 255);
+  --black-color: rgb(46, 46, 46);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* TOGGLE BURGER MENU */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 5%;
+  height: 4%;
+  left: 5%;
+  top: 5%;
+}
+
+
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 50PX;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 30% 0 0;
+  font-size: 1.15em;
+}
+
+
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #d1c651;
+  padding: 0.8em;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Individual item */
+.bm-item {
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 1em;
+}
+
+
+/* 
 
 a {
   font-weight: 500;

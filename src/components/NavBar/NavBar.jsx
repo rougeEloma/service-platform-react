@@ -1,26 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./NavBar.scss";
-import { MainButton } from "../button/Buttons";
 import { Link, useLocation } from "react-router-dom";
 import userPfp from "/img/user_profile_image.png"
+import { slide as Menu } from 'react-burger-menu';
 
 const NavBar = () => {
-
-    const [active, setActive] = useState(false)
     const [open, setOpen] = useState(false)
 
-    const {pathname} = useLocation();
-
-    const isActive = () => {
-        window,scrollY > 0 ? setActive(true) : setActive(false);
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', isActive);
-        return () => {
-            window.removeEventListener('scroll', isActive);
-        }
-    },[])
 
     const currentUser = {
         id: 1,
@@ -29,8 +15,54 @@ const NavBar = () => {
     }
 
     return (
-        <div className={active || pathname !== "/" ? "nav-bar active" : "nav-bar"}>
+        <div className="navBar">
           <div className="container">
+            <Menu pageWrapId={ "page-wrap" } customBurgerIcon={ <img src="img/hamburger.svg" /> }>
+              <main id="page-wrap">
+                <div className="generals">
+                  <Link to="/">
+                  <span>Acceuil</span>
+                  </Link>
+                  <span>NBN</span> {/* l'apropos  */}
+                  <Link to="/explorer">
+                  <span>Explorer</span>
+                  </Link>
+                  <span>Langues</span>
+                </div>
+                <div className="categories">
+                  <Link className="link menuLink" to="/">
+                    Ménage
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Jardin
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Garage
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Immobilier
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Cuisine
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Musique & Audio
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Photograpie
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Littérature
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Informatique
+                  </Link>
+                  <Link className="link menuLink" to="/">
+                    Electronique
+                  </Link>
+                </div>
+              </main>
+            </Menu>
             <div className="logo">
               <Link className="link" to="/">
                 <span className="text">LBN</span>
@@ -38,11 +70,6 @@ const NavBar = () => {
               {/* <span className="dot">.</span> */}
             </div>
             <div className="links">
-              <span>NBN</span> {/* l'apropos  */}
-              <Link to="/explorer">
-              <span>Explorer</span>
-              </Link>
-              <span>Langues</span>
               {!currentUser?.isSeller && <span>Devient Prestataire</span>}
               {currentUser ? (
                 <div className="user" onClick={() => setOpen(!open)}>
@@ -82,44 +109,6 @@ const NavBar = () => {
               )}
             </div>
           </div>
-          {(active || pathname !== "/") && (
-            <>
-              <hr />
-              <div className="menu">
-                <Link className="link menuLink" to="/">
-                  Ménage
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Jardin
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Garage
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Immobilier
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Cuisine
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Musique & Audio
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Photograpie
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Littérature
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Informatique
-                </Link>
-                <Link className="link menuLink" to="/">
-                  Electronique
-                </Link>
-              </div>
-              <hr />
-            </>
-          )}
         </div>
       );
 }
