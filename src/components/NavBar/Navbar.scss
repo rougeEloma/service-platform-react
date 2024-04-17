@@ -43,14 +43,37 @@
     justify-content: space-between;
     padding: 20px 0px;
 
-    .generals{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid gray;
-      padding-bottom: 20px;
+    .burger{
+      padding: 1em 1em 0 2em;
+      overflow: hidden; /* Hide scrollbars */
+
+      .generals{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-bottom: 1px solid gray;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+      }
+      .menuLink {
+        color: var(--secondary-color);
+      }
+
+      .categories {
+        width: 95%;
+        padding: 10px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+        color: gray;
+        font-weight: 300;
+        font-family: "Montserrat", sans-serif;
+    
+        
+      }
     }
+
 
     .logo {
       font-size: 2em;
@@ -128,22 +151,48 @@
     border-bottom: 0.5px solid #ebe9e9;
   }
 
-  .categories {
-    width: 95%;
-    padding: 10px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: space-between;
-    color: gray;
-    font-weight: 300;
-    font-family: "Montserrat", sans-serif;
 
-    .menuLink {
-      color: var(--white-color);
-    }
+    /* ------- TOGGLE BURGER MENU ------- */
+
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: fixed;
+    width: 5%;
+    height: 4%;
+    left: 5%;
+    top: 5%;
   }
-}
 
+
+
+  /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: var(--white-color);
+    font-size: 1.15em;
+  }
+
+
+
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: var(--secondary-color);
+    padding: 0.8em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Individual item */
+  .bm-item {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1em;
+  }
+
+}
 
 
