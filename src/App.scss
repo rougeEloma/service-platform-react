@@ -12,6 +12,10 @@ button{
 
 /* LINKS */
 
+// Link{
+//   color: var(--secondary-color);
+// }
+
 /* POUR SERVICES.JSX */
 
 .Servicesjsx {
@@ -120,3 +124,28 @@ button{
     }
   }
 }
+
+
+// RESPONSIVE ------------------------------------------------
+
+/*
+* Variables for breakpoints
+*/
+$mobile-landscape: 568px;
+$tablet: 768px;
+$desktop: 992px;
+
+/*
+* Map for breakpoints
+*/
+$breakpoints: (
+  "small": (
+    min-width: $mobile-landscape,
+  ),
+  "medium": (
+    min-width: $tablet,
+  ),
+  "large": (
+    min-width: $desktop,
+  ),
+); 

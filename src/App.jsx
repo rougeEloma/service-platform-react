@@ -8,6 +8,7 @@ import MyOrders from "./pages/orders/MyOrders";
 import AddService from "./pages/add/AddService"
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Services from './pages/services/Services';
+import SingleService from './pages/SingleService';
 
 export default function App() {
 
@@ -49,6 +50,10 @@ export default function App() {
         {
           path:"/messages",
           element:<Messages/>
+        },
+        {
+          path:"/service/123",
+          element:<SingleService/>
         }
       ]
     },
