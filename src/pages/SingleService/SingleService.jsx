@@ -1,4 +1,4 @@
-import React from 'react'
+import "./SingleService.scss"
 
 const SingleService = () => {
   return (

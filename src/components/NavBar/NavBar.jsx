@@ -17,7 +17,7 @@ const NavBar = () => {
     return (
         <div className="navBar">
           <div className="container">
-            <Menu pageWrapId={ "page-wrap" } customBurgerIcon={ <img src="img/hamburger.svg" /> }>
+            <Menu pageWrapId={ "page-wrap" } customBurgerIcon={ <img src="/img/hamburger.svg" /> }>
               <main id="page-wrap" className="burger">
                 <div className="generals">
                   <Link to="/">
