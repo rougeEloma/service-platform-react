@@ -62,10 +62,44 @@ const SingleService = () => {
                                 <span className="desc">Francais</span>
                             </div>
                         </div>
+                        <hr />
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti voluptatem aliquid est voluptate facilis neque doloremque odit atque dolores! Inventore accusamus quidem consequuntur, perspiciatis nam ad id possimus eius exercitationem.
                         </p>
                     </div>
+                </div>
+                <div className="reviews">
+                    <h2>Reviews</h2>
+                    <div className="item">
+                        <div className="user">
+                            <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+                            <div className="info">
+                                <span>Janne Danne</span>
+                                <div className="country">
+                                    {/* <img src="/img/flag.png" alt="" /> */}
+                                    <span>France</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="stars">
+                            <img src="/img/star.png" alt="" />
+                            <img src="/img/star.png" alt="" />
+                            <img src="/img/star.png" alt="" />
+                            <img src="/img/star.png" alt="" />
+                            <span>4</span>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi beatae dolorem neque quas dicta id ullam nam harum iste voluptatem, incidunt a. Omnis tenetur dolore a ut laudantium culpa voluptates.
+                        </p>
+                        <div className="helpful">
+                            <span>Intéréssant ?</span>
+                            <img src="/img/like.png" alt="" />
+                            <span>Oui</span>
+                            <img src="/img/dislike.png" alt="" />
+                            <span>Non</span>
+                        </div>
+                    </div>
+                    <hr />
                 </div>
             </div>
             <div className="right"></div>
