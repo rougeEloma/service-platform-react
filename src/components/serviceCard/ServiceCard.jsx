@@ -11,7 +11,7 @@ const ServiceCard = ({ item }) => {
   // });
   return (
     <Link to="/service/123" className="link">
-      <div className="gigCard">
+      <div className="ServiceCard">
         <img src={item.img} alt="" />
         <div className="info">
           <div className="user">

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --red: #db2d1a;
+    --dark-blue: #002246;
+    --white: #ffffff;
+    --dark-red: #6f0d02;
+    --gray: #74767e;
+    --blackish: #272727;
+}

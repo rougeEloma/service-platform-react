@@ -1,49 +1,46 @@
-import { useState } from "react";
-import "./Featured.scss";
-import { useNavigate } from "react-router-dom";
-import searchPng from "../../../public/img/Search.svg"
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Featured.scss';
 
-function Featured() {
-  const [input, setInput] = useState("");
-  // const navigate = useNavigate();
-
-  // const handleSubmit = () => {
-  //   navigate(`/gigs?search=${input}`);
-  // };
+const Featured = () => {
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+  
+  const handleSearch = () => {
+    if(search) {
+      navigate(`/services?recherche=${search}`);
+    }
+  }
 
   return (
-    <div className="featured">
+    <div className='featured'>
       <div className="container">
+
         <div className="left">
-          <h1>
-          Trouvez les services <span>indépendants</span> parfaits pour vous
-          </h1>
+          <h1>Trouvez, chez nos préstataires les <span>services</span> parfaits pour vous</h1>
           <div className="search">
             <div className="searchInput">
-              <img src={searchPng} alt="" />
-              <input
-                type="text"
-                placeholder='Essayez "jardinier"    '
-                maxlength="20"
-                onChange={(e) => setInput(e.target.value)}
-              />
+              <img src="./media/search.png" alt="search" />
+              <input type="search" placeholder='Essayez "jardinier"' onChange={(({ target: { value } }) => setSearch(value))} />
             </div>
-            <button>Rechercher</button>
+            <button onClick={handleSearch}>Rechercher</button>
           </div>
           <div className="popular">
-            <span>Populaire:</span>
-            <button>Ménage</button>
-            <button>Commission</button>
-            <button>Photograpie</button>
-            <button>Informatique</button>
+            <span>Populaire : </span>
+            <button>jardin</button>
+            <button>commission</button>
+            <button>néttoyage</button>
+            <button>informatique</button>
           </div>
         </div>
+
         <div className="right">
-          <img src="./img/man.png" alt="" />
+          {/* <img src="./media/hero.png" alt="hero" /> */}
         </div>
+        
       </div>
     </div>
-  );
+  )
 }
 
-export default Featured;
+export default Featured
