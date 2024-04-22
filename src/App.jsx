@@ -5,9 +5,9 @@ import { RecoilRoot } from "recoil";
 import { NavBar, PrivateRoute, Footer } from "./components";
 import {
   Home,
-  Gig,
-  Gigs,
-  MyGigs,
+  Service,
+  Services,
+  MesServices,
   Add,
   Orders,
   Login,
@@ -20,8 +20,8 @@ import "./App.scss";
 
 const paths = [
   { path: "/", element: <Home /> },
-  { path: "/service/:_id", element: <Gig /> },
-  { path: "/services", element: <Gigs /> },
+  { path: "/service/:_id", element: <Service /> },
+  { path: "/services", element: <Services /> },
   { path: "/connection", element: <Login /> },
   { path: "/inscription", element: <Register /> },
   {
@@ -44,7 +44,7 @@ const paths = [
     path: "/mes-services",
     element: (
       <PrivateRoute>
-        <MyGigs />
+        <MesServices />
       </PrivateRoute>
     ),
   },

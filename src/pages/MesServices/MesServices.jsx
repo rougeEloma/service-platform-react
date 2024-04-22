@@ -6,9 +6,9 @@ import { axiosFetch } from '../../utils';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../../atoms';
 import { Loader } from '../../components';
-import './MyGigs.scss';
+import './MesServices.scss';
 
-const MyGigs = () => {
+const MesServices = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigate();
 
@@ -99,4 +99,4 @@ const MyGigs = () => {
   )
 }
 
-export default MyGigs
+export default MesServices

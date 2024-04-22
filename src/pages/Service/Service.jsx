@@ -4,14 +4,14 @@ import { useQuery } from '@tanstack/react-query';
 import { axiosFetch, getCountryFlag } from '../../utils';
 import { Link, useParams } from 'react-router-dom';
 import { Loader, NextArrow, PrevArrow } from '../../components';
-import './Gig.scss';
+import './Service.scss';
 
 import { CarouselProvider, Slider, Slide, ImageWithZoom, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const MONTHS = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aou', 'Sept', 'Oct', 'Nov', 'Dec'];
 
-const Gig = () => {
+const Service = () => {
   const { _id } = useParams();
 
   const { isLoading, error, data } = useQuery({
@@ -227,4 +227,4 @@ const Gig = () => {
   )
 }
 
-export default Gig
+export default Service

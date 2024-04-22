@@ -1,40 +1,42 @@
-import { Link } from "react-router-dom";
-import "./ServiceCard.scss";
+import { Link } from 'react-router-dom';
+import './ServiceCard.scss';
 
-const ServiceCard = ({ item }) => {
-  // const { isLoading, error, data } = useQuery({
-  //   queryKey: [item.userId],
-  //   queryFn: () =>
-  //     newRequest.get(`/users/${item.userId}`).then((res) => {
-  //       return res.data;
-  //     }),
-  // });
+const ServiceCard = (props) => {
+    const { data } = props;
+
   return (
-    <Link to="/service/123" className="link">
-      <div className="ServiceCard">
-        <img src={item.img} alt="" />
+    <Link to={`/gig/${data._id}`} className="link">
+      <div className="gigCard">
+        <img src={data.cover} alt="" />
         <div className="info">
           <div className="user">
-            <img src={item.pp} alt="" />
-            <span>{item.username}</span>
+            <img src={data.userID.image || './media/noavatar.png'} alt="" />
+            <span>{data.userID.username}</span>
           </div>
-          <p>{item.desc}</p>
+          <p>{data.title}</p>
           <div className="star">
-            <img src="./img/star.png" alt="" />
-            <span>{item.star}</span>
+            <img src="./media/star.png" alt="" />
+            <span>{Math.round(data.totalStars / data.starNumber) || 0}</span>
+            <span className='totalStars'>({data.starNumber})</span>
           </div>
         </div>
         <hr />
-        <div className="details">
-          <img src="./img/heart.png" alt="" />
+        <div className="detail">
+          <img src="./media/heart.png" alt="" />
           <div className="price">
-            <span>À PARTIR DE</span>
-            <h2>$ {item.price}</h2>
+            <span>STARTING AT</span>
+            <h2>
+              {data.price.toLocaleString('en-IN', {
+                maximumFractionDigits: 0,
+                style: 'currency',
+                currency: 'INR',
+              })}
+            </h2>
           </div>
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default ServiceCard;
+export default ServiceCard

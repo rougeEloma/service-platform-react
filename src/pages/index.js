@@ -1,8 +1,8 @@
 export { default as Home } from './Home/Home';
-export { default as Gig } from './Gig/Gig';
-export { default as Gigs } from './Gigs/Gigs';
+export { default as Service } from './Service/Service';
+export { default as Services } from './Services/Services';
 export { default as Orders } from './Orders/Orders';
-export { default as MyGigs } from './MyGigs/MyGigs';
+export { default as MesServices } from './MesServices/MesServices';
 export { default as Add } from './Add/Add';
 export { default as Login } from './Auth/Login/Login';
 export { default as Register } from './Auth/Register/Register';

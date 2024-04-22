@@ -7,7 +7,7 @@ export { default as Slide } from "./Slide/Slide";
 export { default as PrevArrow } from "./Arrows/PrevArrow";
 export { default as NextArrow } from "./Arrows/NextArrow";
 export { default as ProjectCard } from "./ProjectCard/ProjectCard";
-export { default as GigCard } from "./GigCard/GigCard";
+export { default as ServiceCard } from "./ServiceCard/ServiceCard";
 export { default as CheckoutForm } from "./CheckoutForm/CheckoutForm";
 export { default as PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { default as Loader } from './Loader/Loader';
