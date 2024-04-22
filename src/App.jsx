@@ -2,7 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { RecoilRoot } from "recoil";
-import { Navbar, PrivateRoute, Footer } from "./components";
+import { NavBar, PrivateRoute, Footer } from "./components";
 import {
   Home,
   Gig,
@@ -72,7 +72,7 @@ function App() {
   const Layout = () => {
     return (
       <QueryClientProvider client={queryClient}>
-        <Navbar />
+        <NavBar />
         <Outlet />
         <Footer />
       </QueryClientProvider>

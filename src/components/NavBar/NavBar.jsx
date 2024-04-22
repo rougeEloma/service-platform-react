@@ -11,7 +11,7 @@ import "./Navbar.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Navbar = () => {
+const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
   const { pathname } = useLocation();
@@ -181,4 +181,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
