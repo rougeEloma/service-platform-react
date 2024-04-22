@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import { Slide, TrustedBy } from '../../components';
+import { Featured, Slide, TrustedBy } from '../../components';
 import { CategoryCard, ProjectCard } from '../../components';
-import TrustedBy from '../../components/TrustedBy/TrustedBy';
 import { cards, projects } from '../../data';
 import { Link } from'react-router-dom';
 
