@@ -6,7 +6,7 @@ import { NavBar, PrivateRoute, Footer } from "./components";
 import {
   Home,
   Service,
-  Services,
+  Catalogue,
   MesServices,
   Add,
   Orders,
@@ -21,7 +21,7 @@ import "./App.scss";
 const paths = [
   { path: "/", element: <Home /> },
   { path: "/service/:_id", element: <Service /> },
-  { path: "/services", element: <Services /> },
+  { path: "/services", element: <Catalogue /> },
   { path: "/connection", element: <Login /> },
   { path: "/inscription", element: <Register /> },
   {
