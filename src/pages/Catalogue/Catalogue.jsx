@@ -3,10 +3,9 @@ import { ServiceCard, Loader } from '../../components';
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from 'react-router-dom';
 import { axiosFetch } from '../../utils';
-import './Services.scss';
+import './Catalogue.scss';
 
-const Services = () => {
-
+const Catalogue = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [sortBy, setSortBy] = useState('sales');
   const [category, setCategory] = useState('.');
@@ -17,6 +16,7 @@ const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['gigs'],
@@ -86,5 +86,4 @@ const Services = () => {
   )
 }
 
-
-export default Services;
+export default Catalogue

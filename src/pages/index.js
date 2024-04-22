@@ -1,6 +1,6 @@
 export { default as Home } from './Home/Home';
 export { default as Service } from './Service/Service';
-export { default as Services } from './Services/Services';
+export { default as Catalogue } from './Catalogue/Catalogue';
 export { default as Orders } from './Orders/Orders';
 export { default as MesServices } from './MesServices/MesServices';
 export { default as Add } from './Add/Add';
