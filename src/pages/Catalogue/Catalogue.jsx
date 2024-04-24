@@ -21,7 +21,7 @@ const Catalogue = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['gigs'],
     queryFn: () =>
-      axiosFetch.get(`/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
+      axiosFetch.get(`/catalogue${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
         .then(({ data }) => {
           setCategory(data[0].category);
           return data;

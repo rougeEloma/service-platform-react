@@ -200,11 +200,11 @@ const Service = () => {
                 <div className="details">
                   <div className="item">
                     <img src="/img/clock.png" alt="" />
-                    <span>{data.deliveryTime} Temps de travail</span>
+                    <span>{data.workingTime} Temps de travail</span>
                   </div>
                   <div className="item">
                     <img src="/img/recycle.png" alt="" />
-                    <span>{data.revisionNumber} vérification</span>
+                    <span>{data.renewingNumber} renouvellement</span>
                   </div>
                 </div>
                 <div className="features">

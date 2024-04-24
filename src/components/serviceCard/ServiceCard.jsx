@@ -24,7 +24,7 @@ const ServiceCard = (props) => {
         <div className="detail">
           <img src="./media/heart.png" alt="" />
           <div className="price">
-            <span>STARTING AT</span>
+            <span>A PARTIR DE</span>
             <h2>
               {data.price.toLocaleString('en-IN', {
                 maximumFractionDigits: 0,
