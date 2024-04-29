@@ -50,7 +50,7 @@ const Catalogue = () => {
       <div className="container">
         <span className="breadcrumbs">CATALOGUE | CATEGORIE | {category[0]?.toUpperCase() + category.slice(1)}</span>
         <h1>{category[0]?.toUpperCase() + category.slice(1)}</h1>
-        <p>Explorez les services de la Catégorie {category}</p>
+        <p>Explorez les services de la Catégorie : {category}</p>
         <div className="menu">
           <div className="left">
             <span>Budget</span>
