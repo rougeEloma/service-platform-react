@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { axiosFetch } from "../../utils";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
@@ -8,7 +8,7 @@ import { Loader } from '../../components';
 import "./Orders.scss";
 
 const Orders = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const user = useRecoilValue(userState);
 
   useEffect(() => {
@@ -16,10 +16,10 @@ const Orders = () => {
   }, []);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["commandes"],
+    queryKey: ["orders"],
     queryFn: () =>
       axiosFetch
-        .get(`/commandes`)
+        .get(`/orders`)
         .then(({ data }) => {
           return data;
         })
@@ -36,20 +36,20 @@ const Orders = () => {
       ? order.buyerID._id
       : order.buyerID;
 
-    // axiosFetch
-    //   .get(`/conversations/single/${sellerID}/${buyerID}`)
-    //   .then(({ data }) => {
-    //     navigate(`/message/${data.conversationID}`);
-    //   })
-    //   .catch(async ({ response }) => {
-    //     if (response.status === 404) {
-    //       const { data } = await axiosFetch.post("/conversations", {
-    //         to: user.isSeller ? buyerID : sellerID,
-    //         from: user.isSeller ? sellerID : buyerID,
-    //       });
-    //       navigate(`/message/${data.conversationID}`);
-    //     }
-    //   });
+    axiosFetch
+      .get(`/conversations/single/${sellerID}/${buyerID}`)
+      .then(({ data }) => {
+        navigate(`/message/${data.conversationID}`);
+      })
+      .catch(async ({ response }) => {
+        if (response.status === 404) {
+          const { data } = await axiosFetch.post("/conversations", {
+            to: user.isSeller ? buyerID : sellerID,
+            from: user.isSeller ? sellerID : buyerID,
+          });
+          navigate(`/message/${data.conversationID}`);
+        }
+      });
   };
 
   return (
@@ -61,15 +61,15 @@ const Orders = () => {
       ) : (
         <div className="container">
           <div className="title">
-            <h1>Commandes</h1>
+            <h1>Orders</h1>
           </div>
           <table>
             <thead>
               <tr>
                 <th>Image</th>
-                <th>{user.isSeller ? "acheteur" : "prestataire"}</th>
-                <th>Titre</th>
-                <th>Prix</th>
+                <th>{user.isSeller ? "Buyer" : "Seller"}</th>
+                <th>Title</th>
+                <th>Price</th>
                 <th>Contact</th>
               </tr>
             </thead>

@@ -40,7 +40,7 @@
           color: white;
           font-weight: 500;
           font-size: 18px;
-          background-color: var(--red);
+          background-color: #1dbf73;
           cursor: pointer;
 
           &:disabled {
@@ -96,11 +96,11 @@
           }
   
           input:checked + .slider {
-            background-color: #ef6c38;
+            background-color: #2196f3;
           }
   
           input:focus + .slider {
-            box-shadow: 0 0 1px #ef6c38;
+            box-shadow: 0 0 1px #2196f3;
           }
   
           input:checked + .slider:before {

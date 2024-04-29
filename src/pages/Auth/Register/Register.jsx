@@ -26,11 +26,11 @@ const Register = () => {
 
     for (let key in formInput) {
       if (formInput[key] === '') {
-        toast.error('Veuillez remplir tous les champs de saisie : ' + key);
+        toast.error('Please fill all input field: ' + key);
         return;
       }
       else if (key === 'phone' && formInput[key].length < 9) {
-        toast.error('Entrez un numéro de téléphone valide !');
+        toast.error('Enter valid phone number!');
         return;
       }
     }
@@ -38,10 +38,10 @@ const Register = () => {
     setLoading(true);
     try {
       const { url } = await generateImageURL(image);
-      const { data } = await axiosFetch.post('/auth/inscription', { ...formInput, image: url });
-      toast.success('Inscription réussi!');
+      const { data } = await axiosFetch.post('/auth/register', { ...formInput, image: url });
+      toast.success('Registration successful!');
       setLoading(false);
-      navigate('/connection');
+      navigate('/login');
     }
     catch ({ response }) {
       toast.error(response.data.message);
@@ -62,8 +62,8 @@ const Register = () => {
     <div className="register">
       <form onSubmit={handleSubmit}>
         <div className="left">
-          <h1>Créer un nouveau compte</h1>
-          <label htmlFor="">Identifiant</label>
+          <h1>Create a new account</h1>
+          <label htmlFor="">Username</label>
           <input
             name="username"
             type="text"
@@ -77,32 +77,32 @@ const Register = () => {
             placeholder="email"
             onChange={handleChange}
           />
-          <label htmlFor="">Mot de passe</label>
+          <label htmlFor="">Password</label>
           <input name="password" type="password" onChange={handleChange} />
-          <label htmlFor="">Photo de profile</label>
+          <label htmlFor="">Profile Picture</label>
           <input type="file" onChange={(event) => setImage(event.target.files[0])} />
-          <button type="submit" disabled={loading}>{loading ? 'Chargement...' : "S'inscrire"}</button>
+          <button type="submit" disabled={loading}>{loading ? 'Loading...' : 'Register'}</button>
         </div>
         <div className="right">
-          <p>Vous avez déjà un compte ? <Link to='/login'>S'inscrire</Link></p>
-          <h1>Je veux devenir prestataire</h1>
+          <p>Already have an account? <Link to='/login'>Signin</Link></p>
+          <h1>I want to become a seller</h1>
           <div className="toggle">
-            <label htmlFor="">Activer le compte prestataire</label>
+            <label htmlFor="">Activate the seller account</label>
             <label className="switch">
               <input type="checkbox" name='isSeller' onChange={handleChange} />
               <span className="slider round"></span>
             </label>
           </div>
-          <label htmlFor="">Numéro de téléphone</label>
+          <label htmlFor="">Phone Number</label>
           <input
             name="phone"
             type="text"
             placeholder="+1 1234 567 890"
             onChange={handleChange}
           />
-          <label htmlFor="">Déscription</label>
+          <label htmlFor="">Description</label>
           <textarea
-            placeholder="Une brève description de vous"
+            placeholder="A short description of yourself"
             name="description"
             id=""
             cols="30"

@@ -15,9 +15,9 @@ const Success = () => {
   useEffect(() => {
     (async () => {
       try {
-        await axiosFetch.patch("/commandes", { payment_intent });
+        await axiosFetch.patch("/orders", { payment_intent });
         setTimeout(() => {
-          navigate("/commandes");
+          navigate("/orders");
         }, 5000);
       } catch ({ response }) {
         console.log(response.data.message);
@@ -27,7 +27,8 @@ const Success = () => {
 
   return (
     <div className="pay-message">
-      Paiement réussi. Vous êtes redirigé vers la page des commandes. Merci de ne pas fermer la page.
+      Payment successful. You are being redirected to the orders page. Please do
+      not close the page
     </div>
   );
 };

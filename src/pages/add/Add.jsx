@@ -25,7 +25,7 @@ const Add = () => {
 
   const mutation = useMutation({
     mutationFn: (gig) =>
-      axiosFetch.post('/services', gig)
+      axiosFetch.post('/gigs', gig)
       .then(({data}) => {
         return data;
       })
@@ -34,7 +34,7 @@ const Add = () => {
       })
     ,
     onSuccess: () => 
-      queryClient.invalidateQueries(['mes-services'])
+      queryClient.invalidateQueries(['my-gigs'])
   })
 
   const handleFormCange = (event) => {
@@ -79,29 +79,29 @@ const Add = () => {
     const form = {...state, userID: user._id}
     for(let key in form) {
       if(form[key] === '' || form[key].length === 0) {
-        toast.error('Veuillez remplir le champ de saisie : ' + key);
+        toast.error('Please fill input field: ' + key);
         return;
       }
     }
-    toast.success("Toutes nos félicitations! Votreservice est sur le marché !")
+    toast.success("Congratulations! You're on the market!")
     mutation.mutate(form);
     setTimeout(() => {
-      navigate('/mes-services');
+      navigate('/my-gigs');
     }, 2000);
   }
 
   return (
     <div className='add'>
       <div className="container">
-        <h1>Ajouter</h1>
+        <h1>Add New Gig</h1>
         <div className="sections">
           <div className="left">
-            <label htmlFor="">Titre</label>
+            <label htmlFor="">Title</label>
             <input name='title' type="text" placeholder="e.g. I will do something I'm really good at" onChange={handleFormCange} />
 
-            <label htmlFor="">Categorie</label>
+            <label htmlFor="">Category</label>
             <select name="category" onChange={handleFormCange}>
-              <option value=''>Categorie</option>
+              <option value=''>Category</option>
               {
                 cards.map((item) => (
                   <option key={item.id} value={item.slug}>{item.slug[0].toUpperCase() + item.slug.slice(1)}</option>
@@ -111,37 +111,37 @@ const Add = () => {
 
             <div className="images">
               <div className="imagesInputs">
-                <label htmlFor="">Image de fond</label>
+                <label htmlFor="">Cover Image</label>
                 <input type="file" accept='image/*' onChange={(event) => setCoverImage(event.target.files[0])} />
                 <br />
-                <label htmlFor="">Image de profile</label>
+                <label htmlFor="">Upload Images</label>
                 <input type="file" accept='image/*' multiple onChange={(event) => setGigImages(event.target.files)} />
               </div>
-              <button disabled={!!disabled} onClick={handleImageUploads}>{uploading ? 'uploading' : disabled ? 'Téléchargé' : 'Télécharger'}</button>
+              <button disabled={!!disabled} onClick={handleImageUploads}>{uploading ? 'uploading' : disabled ? 'Uploaded' : 'upload'}</button>
             </div>
 
-            <label htmlFor="">Déscription</label>
-            <textarea name='description' cols="30" rows="16" placeholder='Brèves descriptions pour présenter votre service aux clients' onChange={handleFormCange}></textarea>
-            <button onClick={handleFormSubmit}>Créer</button>
+            <label htmlFor="">Description</label>
+            <textarea name='description' cols="30" rows="16" placeholder='Brief descriptions to introduce your service to customers' onChange={handleFormCange}></textarea>
+            <button onClick={handleFormSubmit}>Create</button>
           </div>
 
           <div className="right">
-            <label htmlFor="">Tire du service</label>
-            <input type="text" name='shortTitle' placeholder='e.g. réparateur de télé' onChange={handleFormCange} />
+            <label htmlFor="">Service Title</label>
+            <input type="text" name='shortTitle' placeholder='e.g. One-page web design' onChange={handleFormCange} />
 
-            <label htmlFor="">Déscription courte</label>
+            <label htmlFor="">Short Description</label>
             <textarea name='shortDesc' cols="30" rows="10" placeholder='Short description of your service' onChange={handleFormCange}></textarea>
 
-            <label htmlFor="">Temps de travail (e.g. 3 jours)</label>
+            <label htmlFor="">Delivery Time (e.g. 3 days)</label>
             <input type="number" name='deliveryTime' min='1' onChange={handleFormCange} />
 
-            <label htmlFor="">Numéro de vérification</label>
+            <label htmlFor="">Revision Number</label>
             <input type="number" name='revisionNumber' min='1' onChange={handleFormCange} />
 
-            <label htmlFor="">Ajouter une fonctionnalité</label>
+            <label htmlFor="">Add Feature</label>
             <form className='add' onSubmit={handleFormFeature}>
               <input type="text" placeholder='e.g. page design' onChange={handleFormCange} />
-              <button type='submit'>Ajouter</button>
+              <button type='submit'>Add</button>
             </form>
             <div className="addedFeatures">
               {
@@ -154,7 +154,7 @@ const Add = () => {
                 ))
               }
             </div>
-            <label htmlFor="">Prix</label>
+            <label htmlFor="">Price</label>
             <input name='price' type="number" min='1' onChange={handleFormCange} />
           </div>
         </div>

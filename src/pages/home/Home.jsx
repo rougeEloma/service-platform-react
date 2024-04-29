@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Featured, Slide, TrustedBy } from '../../components';
 import { CategoryCard, ProjectCard } from '../../components';
 import { cards, projects } from '../../data';
-import { Link } from'react-router-dom';
 
 import './Home.scss';
 
@@ -25,59 +24,54 @@ const Home = () => {
       <div className="features">
         <div className="container">
           <div className="item">
-            <h1>Tout un monde de talentueux prestataires à quelques cliques de vous.</h1>
+            <h1>A whole world of freelance talent at your fingertips</h1>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Dévelloper votre business en indépendant.</h6>
+              <h6>The best for every budget</h6>
             </div>
-            <p>Ce projet a pour objectif de créer une plateforme de services de tout genre.</p>
+            <p>Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Le meilleur pour tous les budgets.</h6>
+              <h6>Quality work done quickly</h6>
             </div>
-            <p>Jardiniers, électriciens, designers web, etc. avec des prix et des conditions déterminés
-directement par le prestataire.</p>
+            <p>Find the right freelancer to begin working on your project within minutes.</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Vous êtes toujours protégés.</h6>
+              <h6>Protected payments, every time</h6>
             </div>
-            <p>Toutes les informations et documents échangés dans le cadre de ce projet seront traités
-avec la plus stricte confidentialité et ne seront accessibles qu'aux parties prenantes
-impliquées dans le projet.</p>
+            <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>support garantie</h6>
+              <h6>24/7 support</h6>
             </div>
-            <p>Des questions? Notre équip est toujours disponible pour vous aider peu importe le problème.</p>
+            <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
           </div>
           <div className="item">
-            <img className="rightImg" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_1.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624757/business-desktop-870-x1.png" alt="" />
+            <video poster='https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png' src="./media/video.mp4" controls></video>
           </div>
         </div>
       </div>
 
-      {/* Companies Business Component */}
+      {/* Fiverr Business Component */}
       <div className="features dark">
         <div className="container">
           <div className="item">
-            <h2>Pour votre business</h2>
-            <h1>Une solution métier pensée pour les <span>équipes</span></h1>
-            <p>Passez à une expérience organisée remplie d'outils et d'avantages, dédiée aux entreprises.</p>
+            <h2>fiverr business</h2>
+            <h1>A business solution designed for <span>teams</span></h1>
+            <p>Upgrade to a curated experience packed with tools and benefits, dedicated to businesses</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Connectez-vous à des prestataires possédant une expérience avérée dans leurs domaine</h6>
+              <h6>Connect to freelancers with proven business experience</h6>
             </div>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Soyez mis en relation avec le talent idéal par un responsable du service réussite-client</h6>
+              <h6>Get matched with the perfect talent by a customer success manager</h6>
             </div>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Gérez le travail d'équipe et augmentez la productivité avec un espace de travail de grand capacité</h6>
+              <h6>Manage teamwork and boost productivity with one powerful workspace</h6>
             </div>
-            <Link to="/connection" className="link">
-            <button>Explorer</button>
-            </Link>
+            <button>Explore Fiverr Business</button>
           </div>
           <div className="item">
             <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_1.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624757/business-desktop-870-x1.png" alt="" />

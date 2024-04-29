@@ -1,13 +1,11 @@
 .featured {
-    height: 400px;
+    height: 500px;
     display: flex;
     align-items: center;
     color: #fff;
-    background-color: var(--dark-blue);
 
     .container {
         display: flex;
-        background-color: var(--dark-blue);
 
         .left {
             padding: 0 40px;
@@ -70,7 +68,7 @@
                     height: 50px;
                     font-size: 16px;
                     border: none;
-                    background-color: var(--red);
+                    background-color: var(--green-color);
                     color: #fff;
                     cursor: pointer;
                     border-radius: 0 5px 5px 0;
@@ -140,7 +138,7 @@
     }
 
     @media screen and (max-width: 900px) {
-        background-color: var(--dark-blue);
+        background-color: #1A1B1D;
         height: 400px;
         justify-content: center;
     }

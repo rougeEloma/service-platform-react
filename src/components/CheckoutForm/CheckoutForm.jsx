@@ -29,16 +29,16 @@ const CheckoutForm = () => {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
-          setMessage("Paiement réussi !");
+          setMessage("Payment succeeded!");
           break;
         case "processing":
-          setMessage("Votre paiement est en cours de traitement.");
+          setMessage("Your payment is processing.");
           break;
         case "requires_payment_method":
-          setMessage("Votre paiement n'a pas abouti, veuillez réessayer.");
+          setMessage("Your payment was not successful, please try again.");
           break;
         default:
-          setMessage("Quelque chose s'est mal passé.");
+          setMessage("Something went wrong.");
           break;
       }
     });
@@ -59,7 +59,7 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `${window.location.origin}/reussi`,
+        return_url: `${window.location.origin}/success`,
       },
     });
 
@@ -71,7 +71,7 @@ const CheckoutForm = () => {
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
     } else {
-      setMessage("Une erreur inattendue est apparue.");
+      setMessage("An unexpected error occurred.");
     }
 
     setIsLoading(false);
@@ -90,7 +90,7 @@ const CheckoutForm = () => {
       <PaymentElement id="payment-element" options={paymentElementOptions} />
       <button disabled={isLoading || !stripe || !elements} id="submit">
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Payer"}
+          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
         </span>
       </button>
       {/* Show any error or success messages */}

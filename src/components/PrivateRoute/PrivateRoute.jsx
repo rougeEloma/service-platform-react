@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
   return user ? (
     children
   ) : (
-    <Navigate to='/connection' state={{ from: pathname }} replace />
+    <Navigate to='/login' state={{ from: pathname }} replace />
   )
 
 }

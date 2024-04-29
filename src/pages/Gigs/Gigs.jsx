@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
-import { ServiceCard, Loader } from '../../components';
+import { GigCard, Loader } from '../../components';
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from 'react-router-dom';
 import { axiosFetch } from '../../utils';
-import './Catalogue.scss';
+import './Gigs.scss';
 
-const Catalogue = () => {
+const Gigs = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [sortBy, setSortBy] = useState('sales');
   const [category, setCategory] = useState('.');
@@ -21,7 +21,7 @@ const Catalogue = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['gigs'],
     queryFn: () =>
-      axiosFetch.get(`/catalogue${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
+      axiosFetch.get(`/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
         .then(({ data }) => {
           setCategory(data[0].category);
           return data;
@@ -48,25 +48,25 @@ const Catalogue = () => {
   return (
     <div className='gigs'>
       <div className="container">
-        <span className="breadcrumbs">CATALOGUE | CATEGORIE | {category[0]?.toUpperCase() + category.slice(1)}</span>
+        <span className="breadcrumbs">FIVERR {category[0]?.toUpperCase() + category.slice(1)}</span>
         <h1>{category[0]?.toUpperCase() + category.slice(1)}</h1>
-        <p>Explorez les services de la Catégorie : {category}</p>
+        <p>Explore the boundaries of art and technology with Fiverr's {category} artists</p>
         <div className="menu">
           <div className="left">
             <span>Budget</span>
             <input ref={minRef} type="number" placeholder='min' />
             <input ref={maxRef} type="number" placeholder='max' />
-            <button onClick={handlePriceFilter}>Appliquer</button>
+            <button onClick={handlePriceFilter}>Apply</button>
           </div>
           <div className="right">
-            <span className='sortBy'>Trier par</span>
-            <span className='sortType'>{sortBy === 'sales' ? 'Plus vendus' : 'Récents'}</span>
+            <span className='sortBy'>Sort By</span>
+            <span className='sortType'>{sortBy === 'sales' ? 'Best Selling' : 'Newest'}</span>
             <img src="./media/down.png" alt="" onClick={() => setOpenMenu(!openMenu)} />
             {
               openMenu && (<div className="rightMenu">
                 {
-                  sortBy === 'sales' ? <span onClick={() => handleSortBy('createdAt')}>Récents</span>
-                    : <span onClick={() => handleSortBy('sales')}>Plus vendus</span>
+                  sortBy === 'sales' ? <span onClick={() => handleSortBy('createdAt')}>Newest</span>
+                    : <span onClick={() => handleSortBy('sales')}>Best Selling </span>
                 }
               </div>)
             }
@@ -77,8 +77,8 @@ const Catalogue = () => {
             isLoading
               ? <div className='loader'> <Loader size={45} /> </div>
               : error
-                ? "Oops! Quelque chose s'est mal passé !"
-                : data.map((gig) => <ServiceCard key={gig._id} data={gig} />)
+                ? 'Something went wrong!'
+                : data.map((gig) => <GigCard key={gig._id} data={gig} />)
           }
         </div>
       </div>
@@ -86,4 +86,4 @@ const Catalogue = () => {
   )
 }
 
-export default Catalogue
+export default Gigs

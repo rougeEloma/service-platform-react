@@ -15,7 +15,7 @@ const Pay = () => {
   useEffect(() => {
     ( async () => {
       try {
-        const { data } = await axiosFetch.post(`/commandes/create-payment-intent/${_id}`);
+        const { data } = await axiosFetch.post(`/orders/create-payment-intent/${_id}`);
         setClientSecret(data.clientSecret);
       }
       catch({response}) {
@@ -36,7 +36,7 @@ const Pay = () => {
 
   return (
     <div className='pay'>
-      <h2>Payement sécurisée avec Stripe</h2>
+      <h2>Pay Securely with Stripe</h2>
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />

@@ -3,21 +3,21 @@ import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { axiosFetch, getCountryFlag } from '../../utils';
 import { Link, useParams } from 'react-router-dom';
-import { Loader, NextArrow, PrevArrow } from '../../components';
-import './Service.scss';
+import { Loader, NextArrow, PrevArrow, Reviews } from '../../components';
+import './Gig.scss';
 
 import { CarouselProvider, Slider, Slide, ImageWithZoom, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
-const MONTHS = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aou', 'Sept', 'Oct', 'Nov', 'Dec'];
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
-const Service = () => {
+const Gig = () => {
   const { _id } = useParams();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['gig'],
     queryFn: () =>
-      axiosFetch.get(`/services/single/${_id}`)
+      axiosFetch.get(`/gigs/single/${_id}`)
         .then(({ data }) => {
           data.images.unshift(data.cover);
           return data;
@@ -40,10 +40,10 @@ const Service = () => {
         isLoading
           ? <div className='loader'> <Loader /> </div>
           : error
-            ? "Quelque chose s'est mal passé !"
+            ? 'Something went wrong!'
             : <div className="container">
               <div className="left">
-                <span className="breadcrumbs">Acceuil | Catégorie</span>
+                <span className="breadcrumbs">Liverr Graphics & Design</span>
                 <h1>{data?.title}</h1>
                 <div className="user">
                   <img
@@ -108,11 +108,11 @@ const Service = () => {
                   <div className="details">
                     <div className="item">
                       <img src="/img/clock.png" alt="" />
-                      <span>{data.deliveryTime} Temps de travail</span>
+                      <span>{data.deliveryTime} days Delivery</span>
                     </div>
                     <div className="item">
                       <img src="/img/recycle.png" alt="" />
-                      <span>{data.revisionNumber} vérification</span>
+                      <span>{data.revisionNumber} Revisions</span>
                     </div>
                   </div>
                   <div className="features">
@@ -125,18 +125,18 @@ const Service = () => {
                       ))
                     }
                   </div>
-                  <Link to={`/paiement/${_id}`}>
-                    <button>Continuer</button>
+                  <Link to={`/pay/${_id}`}>
+                    <button>Continue</button>
                   </Link>
                 </div>
-                <h2>À propos de ce service</h2>
+                <h2>About This Gig</h2>
                 <p>
                   {
                     data.description
                   }
                 </p>
                 <div className="seller">
-                  <h2>À propos de ce prestataire</h2>
+                  <h2>About The Seller</h2>
                   <div className="user">
                     <img
                       src={data?.userID?.image || '/media/noavatar.png'}
@@ -152,13 +152,13 @@ const Service = () => {
                         <img src="/media/star.png" alt="" />
                         <span>5</span>
                       </div>
-                      <button>Me contacter</button>
+                      <button>Contact Me</button>
                     </div>
                   </div>
                   <div className="box">
                     <div className="items">
                       <div className="item">
-                        <span className="title">De</span>
+                        <span className="title">From</span>
                         <span className="desc">{data?.userID.country}
                           <span className='flag'>
                           <img src={country.normal} alt="" />
@@ -166,16 +166,20 @@ const Service = () => {
                         </span>
                       </div>
                       <div className="item">
-                        <span className="title">Membre depuis</span>
+                        <span className="title">Member since</span>
                         <span className="desc">{MONTHS[new Date(data?.userID.createdAt).getMonth()] + ' ' + new Date(data?.userID.createdAt).getFullYear()}</span>
                       </div>
                       <div className="item">
-                        <span className="title">Temps de réponse Moyenne</span>
-                        <span className="desc">24 heures</span>
+                        <span className="title">Avg. response time</span>
+                        <span className="desc">4 hours</span>
                       </div>
                       <div className="item">
-                        <span className="title">Langages</span>
-                        <span className="desc">Francais, Lingala</span>
+                        <span className="title">Last delivery</span>
+                        <span className="desc">1 day</span>
+                      </div>
+                      <div className="item">
+                        <span className="title">Languages</span>
+                        <span className="desc">English</span>
                       </div>
                     </div>
                     <hr />
@@ -184,6 +188,7 @@ const Service = () => {
                     </p>
                   </div>
                 </div>
+                <Reviews gigID={_id} />
               </div>
               <div className="right">
                 <div className="price">
@@ -200,11 +205,11 @@ const Service = () => {
                 <div className="details">
                   <div className="item">
                     <img src="/img/clock.png" alt="" />
-                    <span>{data.workingTime} Temps de travail</span>
+                    <span>{data.deliveryTime} days Delivery</span>
                   </div>
                   <div className="item">
                     <img src="/img/recycle.png" alt="" />
-                    <span>{data.renewingNumber} renouvellement</span>
+                    <span>{data.revisionNumber} Revisions</span>
                   </div>
                 </div>
                 <div className="features">
@@ -217,8 +222,8 @@ const Service = () => {
                     ))
                   }
                 </div>
-                <Link to={`/paiement/${_id}`}>
-                  <button>Continuer</button>
+                <Link to={`/pay/${_id}`}>
+                  <button>Continue</button>
                 </Link>
               </div>
             </div>
@@ -227,4 +232,4 @@ const Service = () => {
   )
 }
 
-export default Service
+export default Gig

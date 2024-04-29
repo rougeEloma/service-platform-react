@@ -28,7 +28,7 @@
             }
 
             button {
-                background-color: var(--red);
+                background-color: var(--green-color);
                 color: #fff;
                 padding: 10px 20px;
                 border-radius: 5px;
@@ -55,25 +55,20 @@
         .item {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
 
             h1 {
-                font-weight: 600;
+                font-weight: 700;
                 margin-bottom: 10px;
-                font-size: 33px;
+                font-size: 38px;
                 color: #404145;
             }
 
             p {
-                font-size: 14px;
+                font-size: 18px;
                 font-weight: 500;
                 color: #62646A;
                 line-height: 26px;
-            }
-
-            .rightImg {
-                width: 100%;
-                height: 100%;
             }
 
             .title {
@@ -82,8 +77,8 @@
                 gap: 10px;
 
                 img {
-                    width: 15px;
-                    height: 15px;
+                    width: 24px;
+                    height: 24px;
                 }
                 
                 h6 {
@@ -97,7 +92,7 @@
                 width: 720px;
 
                 @media screen and (max-width: 900px) {
-                    width: 95%;
+                    width: 100%;
                 }
             }
         }

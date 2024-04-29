@@ -6,17 +6,17 @@ import { axiosFetch } from '../../utils';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../../atoms';
 import { Loader } from '../../components';
-import './MesServices.scss';
+import './MyGigs.scss';
 
-const MesServices = () => {
+const MyGigs = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigate();
 
   const queryClient = useQueryClient();
   const { isLoading, error, data } = useQuery({
-    queryKey: ['mes-services'],
+    queryKey: ['my-gigs'],
     queryFn: () =>
-      axiosFetch(`/services?userID=${user._id}`)
+      axiosFetch(`/gigs?userID=${user._id}`)
         .then(({ data }) => {
           console.table(data)
           return data;
@@ -28,15 +28,15 @@ const MesServices = () => {
 
   const mutation = useMutation({
     mutationFn: (_id) =>
-      axiosFetch.delete(`/services/${_id}`)
+      axiosFetch.delete(`/gigs/${_id}`)
     ,
     onSuccess: () =>
-      queryClient.invalidateQueries(['mes-services'])
+      queryClient.invalidateQueries(['my-gigs'])
   });
 
   const handleGigDelete = (gig) => {
     mutation.mutate(gig._id);
-    toast.success(gig.title + ' Supprimé avec succès!');
+    toast.success(gig.title + ' deleted successfully!');
   }
 
   useEffect(() => {
@@ -49,28 +49,28 @@ const MesServices = () => {
         isLoading
           ? <div className='loader'> <Loader size={35} /> </div>
           : error
-            ? "Quelque chose s'est mal passé"
+            ? 'Something went wrong'
             : <div className="container">
               <div className="title">
-                <h1>Mes services</h1>
-                <Link to='/ajouter' className='link'>
-                  <button>Ajouter</button>
+                <h1>My Gigs</h1>
+                <Link to='/organize' className='link'>
+                  <button>Add New Gig</button>
                 </Link>
               </div>
               <table>
                 <thead>
                   <tr>
                     <th>Image</th>
-                    <th>Titre</th>
-                    <th>Prix</th>
-                    <th>Commandes</th>
-                    <th>Plus</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Sales</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {
                     data.map((gig) => (
-                      <tr key={gig._id} onClick={() => navigate(`/service/${gig._id}`)}>
+                      <tr key={gig._id} onClick={() => navigate(`/gig/${gig._id}`)}>
                         <td>
                           <img
                             className="cover"
@@ -81,8 +81,8 @@ const MesServices = () => {
                         <td>{gig.title}</td>
                         <td>{gig.price.toLocaleString("en-IN", {
                           maximumFractionDigits: 0,
-                          style: "devise",
-                          currency: "USD",
+                          style: "currency",
+                          currency: "INR",
                         })}</td>
                         <td>{gig.sales}</td>
                         <td>
@@ -99,4 +99,4 @@ const MesServices = () => {
   )
 }
 
-export default MesServices
+export default MyGigs

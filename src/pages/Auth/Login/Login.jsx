@@ -35,17 +35,17 @@ const Login = () => {
 
     for(let key in formInput) {
       if(formInput[key] === '') {
-        toast.error('Veuillez remplir tous les champs de saisie : ' + key);
+        toast.error('Please fill all input fields: ' + key);
         return;
       }
     }
 
     setLoading(true);
     try {
-      const { data } = await axiosFetch.post('/auth/connection', formInput);
+      const { data } = await axiosFetch.post('/auth/login', formInput);
       localStorage.setItem('user', JSON.stringify(data.user));
       setUser(data.user);
-      toast.success("Content de vous revoir!", {
+      toast.success("Welcome back!", {
         duration: 3000,
         icon: "😃"
       });
@@ -66,13 +66,13 @@ const Login = () => {
   return (
     <div className='login'>
       <form action="" onSubmit={handleFormSubmit}>
-        <h1>Se connecter</h1>
-        <label htmlFor="">Identifiant</label>
-        <input name='username' placeholder='votre identifiant' onChange={handleFormInput} />
+        <h1>Sign in</h1>
+        <label htmlFor="">Username</label>
+        <input name='username' placeholder='johndoe' onChange={handleFormInput} />
 
-        <label htmlFor="">Mot de passe</label>
-        <input name='password' type='password' placeholder='votre mot de passe' onChange={handleFormInput} />
-        <button disabled={loading} type='submit'>{ loading ? 'Chargement' : 'Connection' }</button>
+        <label htmlFor="">Password</label>
+        <input name='password' type='password' placeholder='password' onChange={handleFormInput} />
+        <button disabled={loading} type='submit'>{ loading ? 'Loading' : 'Login' }</button>
         <span>{error && error}</span>
       </form>
     </div>

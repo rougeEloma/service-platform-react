@@ -11,7 +11,7 @@ import "./Navbar.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const NavBar = () => {
+const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
   const { pathname } = useLocation();
@@ -47,19 +47,14 @@ const NavBar = () => {
     };
   }, []);
 
-  const categoryLinks = [
-    { path: "/services?categorie=jardin", name: "jardin" },
-    { path: "/services?categorie=reparation", name: "réparation" },
-    { path: "/services?categorie=commission", name: "commission" },
-    { path: "/services?categorie=babysitting", name: "babysitting" },
-    { path: "/services?categorie=nettoyage", name: "néttoyage" },
-    { path: "/services?categorie=musique", name: "musique" },
-    { path: "/services?categorie=filmographie", name: "filmographie" },
-    { path: "/services?categorie=photographie", name: "photographie" },
-    { path: "/services?categorie=cuisine", name: "cuisine" },
-    { path: "/services?categorie=informatique", name: "informatique" },
-    { path: "/services?categorie=redaction", name: "rédaction" },
-    { path: "/services?categorie=infographie", name: "infographie" },
+  const menuLinks = [
+    { path: "/gigs?category=design", name: "Graphics & Design" },
+    { path: "/gigs?category=video", name: "Video & Animation" },
+    { path: "/gigs?category=books", name: "Writing & Translation" },
+    { path: "/gigs?category=ai", name: "AI Services" },
+    { path: "/gigs?category=social", name: "Digital Marketing" },
+    { path: "/gigs?category=voice", name: "Music & Audio" },
+    { path: "/gigs?category=wordpress", name: "Programming & Tech" },
   ];
 
   const settings = {
@@ -107,31 +102,37 @@ const NavBar = () => {
       <div className="container">
         <div className="logo">
           <Link to="/" className="link">
-            <span className="text">Alain</span>
+            <span className="text">fiverr</span>
           </Link>
           <span className="dot">.</span>
         </div>
 
         <div className="links">
+          <div className="menu-links">
+            <span>Fiverr Business</span>
+            <span>Explore</span>
+            <span>English</span>
+            {!user?.isSeller && <span>Become a Seller</span>}
+          </div>
           {isLoading ? (
             <Loader size={35} />
           ) : (
             <>
               {!user && (
                 <span>
-                  <Link to="/connection" className="link">
-                    Se connecter
+                  <Link to="/login" className="link">
+                    Sign in
                   </Link>
                 </span>
               )}
               {!user && (
-                <Link to="/inscription" className="link">
                 <button
                   className={showMenu || pathname !== "/" ? "join-active" : ""}
-                > 
-                  S'inscrire
+                >
+                  <Link to="/register" className="link">
+                    Join
+                  </Link>
                 </button>
-                </Link>
               )}
               {user && (
                 <div className="user" onClick={() => setShowPanel(!showPanel)}>
@@ -141,19 +142,22 @@ const NavBar = () => {
                     <div className="options">
                       {user?.isSeller && (
                         <>
-                          <Link className="link" to="/mes-services">
-                            Services
+                          <Link className="link" to="/my-gigs">
+                            Gigs
                           </Link>
-                          <Link className="link" to="/ajouter">
-                            Ajouter
+                          <Link className="link" to="/organize">
+                            Add New Gig
                           </Link>
                         </>
                       )}
-                      <Link className="link" to="/commandes">
-                        Commandes
+                      <Link className="link" to="/orders">
+                        Orders
+                      </Link>
+                      <Link className="link" to="/messages">
+                        Messages
                       </Link>
                       <Link className="link" to="/" onClick={handleLogout}>
-                        Se déconnecter
+                        Logout
                       </Link>
                     </div>
                   )}
@@ -167,7 +171,7 @@ const NavBar = () => {
         <>
           <hr />
           <Slider className="menu" {...settings}>
-            {categoryLinks.map(({ path, name }) => (
+            {menuLinks.map(({ path, name }) => (
               <div key={name} className="menu-item">
                 <Link className="link" to={path}>
                   {name}
@@ -181,4 +185,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;

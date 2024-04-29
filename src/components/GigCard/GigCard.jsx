@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import './ServiceCard.scss';
+import './GigCard.scss';
 
-const ServiceCard = (props) => {
+const GigCard = (props) => {
     const { data } = props;
 
   return (
@@ -24,7 +24,7 @@ const ServiceCard = (props) => {
         <div className="detail">
           <img src="./media/heart.png" alt="" />
           <div className="price">
-            <span>A PARTIR DE</span>
+            <span>STARTING AT</span>
             <h2>
               {data.price.toLocaleString('en-IN', {
                 maximumFractionDigits: 0,
@@ -39,4 +39,4 @@ const ServiceCard = (props) => {
   )
 }
 
-export default ServiceCard
+export default GigCard

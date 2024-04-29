@@ -2,14 +2,17 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { RecoilRoot } from "recoil";
-import { NavBar, PrivateRoute, Footer } from "./components";
+import { Navbar, PrivateRoute } from "./components";
 import {
   Home,
-  Service,
-  Catalogue,
-  MesServices,
+  Footer,
+  Gig,
+  Gigs,
+  MyGigs,
   Add,
   Orders,
+  Message,
+  Messages,
   Login,
   Register,
   Pay,
@@ -20,12 +23,12 @@ import "./App.scss";
 
 const paths = [
   { path: "/", element: <Home /> },
-  { path: "/service/:_id", element: <Service /> },
-  { path: "/services", element: <Catalogue /> },
-  { path: "/connection", element: <Login /> },
-  { path: "/inscription", element: <Register /> },
+  { path: "/gig/:_id", element: <Gig /> },
+  { path: "/gigs", element: <Gigs /> },
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
   {
-    path: "/commandes",
+    path: "/orders",
     element: (
       <PrivateRoute>
         <Orders />
@@ -33,7 +36,7 @@ const paths = [
     ),
   },
   {
-    path: "/ajouter",
+    path: "/organize",
     element: (
       <PrivateRoute>
         <Add />
@@ -41,15 +44,31 @@ const paths = [
     ),
   },
   {
-    path: "/mes-services",
+    path: "/my-gigs",
     element: (
       <PrivateRoute>
-        <MesServices />
+        <MyGigs />
       </PrivateRoute>
     ),
   },
   {
-    path: "/payement/:_id",
+    path: "/message/:conversationID",
+    element: (
+      <PrivateRoute>
+        <Message />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/messages",
+    element: (
+      <PrivateRoute>
+        <Messages />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/pay/:_id",
     element: (
       <PrivateRoute>
         <Pay />
@@ -57,7 +76,7 @@ const paths = [
     ),
   },
   {
-    path: "/reussi",
+    path: "/success",
     element: (
       <PrivateRoute>
         <Success />
@@ -72,7 +91,7 @@ function App() {
   const Layout = () => {
     return (
       <QueryClientProvider client={queryClient}>
-        <NavBar />
+        <Navbar />
         <Outlet />
         <Footer />
       </QueryClientProvider>

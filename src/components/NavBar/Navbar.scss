@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: var(--dark-blue);
+    background-color: #1A1B1D;
     color: #fff;
     transition: 0.5s all ease;
     position: sticky;
@@ -26,7 +26,7 @@
             font-weight: bold;
 
             .dot {
-                color: var(--red);
+                color: var(--green-color);
             }
         }
 
@@ -92,20 +92,20 @@
                 background-color: transparent;
 
                 &:hover {
-                    background-color: var(--red);
+                    background-color: var(--green-color);
                     border-color: var(--gray-color);
                 }
             }
 
             .join-active {
-                color: var(--red);
+                color: #1DBF73;
                 font-weight: 600;
                 font-size: 14px;
-                border: 1px solid var(--red);
+                border: 1px solid #1DBF73;
 
                 &:hover {
-                    background-color: var(--red);
-                    border-color: var(--red);
+                    background-color: #1DBF73;
+                    border-color: #1DBF73;
                     color: #fff;
                 }
             }
@@ -120,10 +120,6 @@
     .menu {
         width: 80%;
         color: var(--gray-color);
-
-        .slick-prev, .slick-next{
-            color: var(--dark-blue);
-        }
 
         .menu-item {
             padding: 10px 0;
