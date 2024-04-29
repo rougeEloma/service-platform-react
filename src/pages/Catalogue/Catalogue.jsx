@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
-import { ServiceCard, Loader } from '../../components';
+import ServiceCard from '../../components/ServiceCard/ServiceCard';
+import Loader from '../../components/Loader/Loader';
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from 'react-router-dom';
-import { axiosFetch } from '../../utils';
+import axiosFetch from '../../utils/axiosFetch';
 import './Catalogue.scss';
 
 const Catalogue = () => {

@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 // import { useNavigate } from "react-router-dom";
-import { axiosFetch } from "../../utils";
+import axiosFetch from '../../utils/axiosFetch';
 import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
-import { Loader } from '../../components';
+import Loader from '../../components/Loader/Loader';
 import "./Orders.scss";
 
 const Orders = () => {

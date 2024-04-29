@@ -2,20 +2,20 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { RecoilRoot } from "recoil";
-import { NavBar, PrivateRoute, Footer } from "./components";
-import {
-  Home,
-  Service,
-  Catalogue,
-  MesServices,
-  Add,
-  Orders,
-  Login,
-  Register,
-  Pay,
-  Success,
-  NotFound,
-} from "./pages";
+import NavBar from "./components/NavBar/NavBar";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import Service from "./pages/Service/Service";
+import Catalogue from "./pages/Catalogue/Catalogue";
+import MesServices from "./pages/MesServices/MesServices";
+import Add from "./pages/Add/Add";
+import Orders from "./pages/Orders/Orders";
+import Login from "./pages/Auth/Login/Login";
+import Register from "./pages/Auth/Register/Register";
+import Pay from "./pages/Pay/Pay";
+import Success from "./pages/Success/Success";
+import NotFound from "./pages/NotFound/NotFound";
 import "./App.scss";
 
 const paths = [

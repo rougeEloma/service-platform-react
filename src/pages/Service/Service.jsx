@@ -1,9 +1,12 @@
 import toast from 'react-hot-toast';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { axiosFetch, getCountryFlag } from '../../utils';
+import axiosFetch from '../../utils/axiosFetch';
+import getCountryFlag from '../../utils/getCountryFlag';
 import { Link, useParams } from 'react-router-dom';
-import { Loader, NextArrow, PrevArrow } from '../../components';
+import Loader from '../../components/Loader/Loader';
+import NextArrow from '../../components/Arrows/NextArrow';
+import PrevArrow from '../../components/Arrows/PrevArrow';
 import './Service.scss';
 
 import { CarouselProvider, Slider, Slide, ImageWithZoom, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';

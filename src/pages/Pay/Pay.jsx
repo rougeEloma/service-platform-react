@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useParams } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
-import { axiosFetch } from '../../utils';
-import { CheckoutForm } from '../../components';
+import axiosFetch from '../../utils/axiosFetch';
+import CheckoutForm from '../../components/CheckoutForm/CheckoutForm';
 import './Pay.scss';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);

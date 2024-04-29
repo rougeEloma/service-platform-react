@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { axiosFetch } from "../../utils";
+import axiosFetch from "../../utils/axiosFetch";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
 import "./Success.scss";

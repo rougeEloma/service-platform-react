@@ -2,10 +2,10 @@ import toast from 'react-hot-toast';
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { axiosFetch } from '../../utils';
+import axiosFetch from '../../utils/axiosFetch';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../../atoms';
-import { Loader } from '../../components';
+import Loader from '../../components/Loader/Loader';
 import './MesServices.scss';
 
 const MesServices = () => {

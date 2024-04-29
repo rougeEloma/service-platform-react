@@ -2,10 +2,10 @@ import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import { axiosFetch } from "../../utils";
+import axiosFetch from "../../utils/axiosFetch";
 import { useRecoilState } from "recoil";
 import { userState } from "../../atoms";
-import { Loader } from "..";
+import Loader from "../Loader/Loader";
 import "./Navbar.scss";
 
 import "slick-carousel/slick/slick.css";

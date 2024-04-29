@@ -1,7 +1,7 @@
 import toast from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { axiosFetch } from '../../../utils';
+import axiosFetch from '../../../utils/axiosFetch';
 import { useRecoilState } from 'recoil';
 import { userState } from '../../../atoms';
 import './Login.scss';
