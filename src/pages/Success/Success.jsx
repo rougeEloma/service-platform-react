@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axiosFetch from "../../utils/axiosFetch";
 import { useRecoilValue } from "recoil";
-import { userState } from "../../atoms";
+import userAtom from "../../atoms/userAtom";
 import "./Success.scss";
 
 const Success = () => {
@@ -10,7 +10,7 @@ const Success = () => {
   const navigate = useNavigate();
   const params = new URLSearchParams(search);
   const payment_intent = params.get("payment_intent");
-  const user = useRecoilValue(userState);
+  const user = useRecoilValue(userAtom);
 
   useEffect(() => {
     (async () => {

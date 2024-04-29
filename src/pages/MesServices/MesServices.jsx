@@ -4,12 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import axiosFetch from '../../utils/axiosFetch';
 import { useRecoilValue } from 'recoil';
-import { userState } from '../../atoms';
+import userAtom from "../../atoms/userAtom";
 import Loader from '../../components/Loader/Loader';
 import './MesServices.scss';
 
 const MesServices = () => {
-  const user = useRecoilValue(userState);
+  const user = useRecoilValue(userAtom);
   const navigate = useNavigate();
 
   const queryClient = useQueryClient();

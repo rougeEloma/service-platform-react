@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axiosFetch from '../../../utils/axiosFetch';
 import { useRecoilState } from 'recoil';
-import { userState } from '../../../atoms';
+import userAtom from "../../../atoms/userAtom";
 import './Login.scss';
 
 const initialState = {
@@ -15,7 +15,7 @@ const Login = () => {
   const [formInput, setFormInput] = useState(initialState);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useRecoilState(userState);
+  const [user, setUser] = useRecoilState(userAtom);
   const navigate = useNavigate();
 
   useEffect(() => {

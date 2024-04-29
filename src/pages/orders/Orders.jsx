@@ -3,13 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 // import { useNavigate } from "react-router-dom";
 import axiosFetch from '../../utils/axiosFetch';
 import { useRecoilValue } from "recoil";
-import { userState } from "../../atoms";
+import userAtom from "../../atoms/userAtom";
 import Loader from '../../components/Loader/Loader';
 import "./Orders.scss";
 
 const Orders = () => {
   // const navigate = useNavigate();
-  const user = useRecoilValue(userState);
+  const user = useRecoilValue(userAtom);
 
   useEffect(() => {
     window.scrollTo(0, 0);

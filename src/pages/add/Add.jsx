@@ -7,11 +7,11 @@ import { cards } from '../../data';
 import axiosFetch from '../../utils/axiosFetch';
 import generateImageURL from '../../utils/generateImageURL';
 import { useRecoilValue } from 'recoil';
-import { userState } from '../../atoms';
+import userAtom from "../../atoms/userAtom";
 import './Add.scss';
 
 const Add = () => {
-  const user = useRecoilValue(userState);
+  const user = useRecoilValue(userAtom);
   const [state, dispatch] = useReducer(gigReducer, initialState);
   const [coverImage, setCoverImage] = useState(null);
   const [gigImages, setGigImages] = useState([]);
