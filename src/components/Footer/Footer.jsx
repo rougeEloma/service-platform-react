@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="bottom">
           <div className="left">
             <h2>Alain</h2>
-            <span>© Alain International Ltd. {new Date().getFullYear()}</span>
+            <span>© Alain RDC Ltd. {new Date().getFullYear()}</span>
           </div>
           <div className="right">
             <div className="social">
