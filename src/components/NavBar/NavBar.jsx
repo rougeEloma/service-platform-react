@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import axiosFetch from "../../utils/axiosFetch";
 import { useRecoilState } from "recoil";
-import { userState } from "../../atoms";
+import userAtom from "../../atoms/userAtom";
 import Loader from "../Loader/Loader";
 import "./Navbar.scss";
 
@@ -16,7 +16,7 @@ const NavBar = () => {
   const [showPanel, setShowPanel] = useState(false);
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [user, setUser] = useRecoilState(userState);
+  const [user, setUser] = useRecoilState(userAtom);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
